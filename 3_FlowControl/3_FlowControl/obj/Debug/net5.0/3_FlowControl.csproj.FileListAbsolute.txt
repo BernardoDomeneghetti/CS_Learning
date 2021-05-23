@@ -1,0 +1,16 @@
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\bin\Debug\net5.0\3_FlowControl.exe
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\bin\Debug\net5.0\3_FlowControl.deps.json
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\bin\Debug\net5.0\3_FlowControl.runtimeconfig.json
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\bin\Debug\net5.0\3_FlowControl.runtimeconfig.dev.json
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\bin\Debug\net5.0\3_FlowControl.dll
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\bin\Debug\net5.0\ref\3_FlowControl.dll
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\bin\Debug\net5.0\3_FlowControl.pdb
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\3_FlowControl.csprojAssemblyReference.cache
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\3_FlowControl.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\3_FlowControl.AssemblyInfoInputs.cache
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\3_FlowControl.AssemblyInfo.cs
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\3_FlowControl.csproj.CoreCompileInputs.cache
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\3_FlowControl.dll
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\ref\3_FlowControl.dll
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\3_FlowControl.pdb
+D:\Bernardo\Repositórios\Study - C#\3_FlowControl\3_FlowControl\obj\Debug\net5.0\3_FlowControl.genruntimeconfig.cache
