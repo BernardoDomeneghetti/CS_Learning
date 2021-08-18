@@ -1,0 +1,24 @@
+C:\Users\Berna\source\repos\5_ByteBankSample\5_ByteBankSample\obj\Debug\net5.0\ByteBankSample.csprojAssemblyReference.cache
+C:\Users\Berna\source\repos\5_ByteBankSample\5_ByteBankSample\obj\Debug\net5.0\ByteBankSample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Berna\source\repos\5_ByteBankSample\5_ByteBankSample\obj\Debug\net5.0\ByteBankSample.AssemblyInfoInputs.cache
+C:\Users\Berna\source\repos\5_ByteBankSample\5_ByteBankSample\obj\Debug\net5.0\ByteBankSample.AssemblyInfo.cs
+C:\Users\Berna\source\repos\5_ByteBankSample\5_ByteBankSample\obj\Debug\net5.0\ByteBankSample.csproj.CoreCompileInputs.cache
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.csproj.AssemblyReference.cache
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.AssemblyInfoInputs.cache
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.AssemblyInfo.cs
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.csproj.CoreCompileInputs.cache
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ByteBankSample.exe
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ByteBankSample.deps.json
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ByteBankSample.runtimeconfig.json
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ByteBankSample.runtimeconfig.dev.json
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ByteBankSample.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ref\ByteBankSample.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ByteBankSample.pdb
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ByteBank.Models.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\bin\Debug\net5.0\ByteBank.Models.pdb
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.csproj.CopyComplete
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ref\ByteBankSample.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.pdb
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBankSample\obj\Debug\net5.0\ByteBankSample.genruntimeconfig.cache

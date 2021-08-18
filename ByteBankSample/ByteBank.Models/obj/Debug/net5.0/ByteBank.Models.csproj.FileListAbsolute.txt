@@ -1,0 +1,11 @@
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\bin\Debug\net5.0\ByteBank.Models.deps.json
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\bin\Debug\net5.0\ByteBank.Models.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\bin\Debug\net5.0\ref\ByteBank.Models.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\bin\Debug\net5.0\ByteBank.Models.pdb
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.AssemblyInfoInputs.cache
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.AssemblyInfo.cs
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.csproj.CoreCompileInputs.cache
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ref\ByteBank.Models.dll
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.pdb

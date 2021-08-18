@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ByteBankSample/1.0.0": {
+        "dependencies": {
+          "ByteBank.Models": "1.0.0"
+        },
+        "runtime": {
+          "ByteBankSample.dll": {}
+        }
+      },
+      "ByteBank.Models/1.0.0": {
+        "runtime": {
+          "ByteBank.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ByteBankSample/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ByteBank.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
