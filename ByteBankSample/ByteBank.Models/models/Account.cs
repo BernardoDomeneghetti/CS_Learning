@@ -7,7 +7,7 @@ namespace ByteBank.models
         public Customer Principal { get; protected set; }
         public Int32 AccountNumber { get; protected set; }
         public Int32 SortCode { get; protected set; }
-        public Double Balance {get; private set; }
+        public Double Balance {get; protected set; }
 
         public static Int32 CreatedAccountAmount { get; protected set;}
 
@@ -34,7 +34,7 @@ namespace ByteBank.models
                     "please insert a value bigger then 0 (Zero)");
         }
 
-        public void Withdraw(Double value)
+        public virtual void Withdraw(Double value)
         {            
             if (value <= this.Balance && value > 0)
             {

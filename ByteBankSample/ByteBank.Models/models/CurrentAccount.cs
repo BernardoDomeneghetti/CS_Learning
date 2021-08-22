@@ -18,6 +18,19 @@ namespace ByteBank.models {
             CreatedAccountAmount++;
         }
 
+        /// <summary>
+        /// Withdraw method decreases balance's value ultil reaches the account debit limit.
+        /// </summary>
+        /// <param name="value">Value must be less then <see cref="Account.Balance"/> + <see cref="CurrentAccount.AccountLimit"/></param>
+        public override void Withdraw(double value)
+        {
+            if (value <= Balance + AccountLimit)
+            {                
+                Balance -= value;
+            }
+
+        }
+
         public void IncreaseLimit(Double IncreaseValue)
         {
             this.AccountLimit += IncreaseValue;

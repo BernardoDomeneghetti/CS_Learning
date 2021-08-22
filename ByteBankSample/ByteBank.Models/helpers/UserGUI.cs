@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteBankSample
+namespace ByteBank.helpers
 {
     public class UserGUI
     {

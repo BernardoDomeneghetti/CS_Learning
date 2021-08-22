@@ -9,3 +9,5 @@ D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\ne
 D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.dll
 D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ref\ByteBank.Models.dll
 D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.pdb
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\obj\Debug\net5.0\ByteBank.Models.csproj.AssemblyReference.cache
+D:\Bernardo\Repositórios\Study - C#\ByteBankSample\ByteBank.Models\bin\Debug\net5.0\ByteBank.Models.xml

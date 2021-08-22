@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ByteBank.Models</name>
+    </assembly>
+    <members>
+        <member name="M:ByteBank.models.CurrentAccount.Withdraw(System.Double)">
+            <summary>
+            Withdraw method decreases balance's value ultil reaches the account debit limit.
+            </summary>
+            <param name="value">Value must be less then <see cref="P:ByteBank.models.Account.Balance"/> + <see cref="P:ByteBank.models.CurrentAccount.AccountLimit"/></param>
+        </member>
+    </members>
+</doc>
