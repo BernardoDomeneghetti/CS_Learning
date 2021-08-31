@@ -1,0 +1,16 @@
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\bin\Debug\net5.0\P06_Generics.exe
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\bin\Debug\net5.0\P06_Generics.deps.json
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\bin\Debug\net5.0\P06_Generics.runtimeconfig.json
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\bin\Debug\net5.0\P06_Generics.runtimeconfig.dev.json
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\bin\Debug\net5.0\P06_Generics.dll
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\bin\Debug\net5.0\ref\P06_Generics.dll
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\bin\Debug\net5.0\P06_Generics.pdb
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\P06_Generics.csproj.AssemblyReference.cache
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\P06_Generics.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\P06_Generics.AssemblyInfoInputs.cache
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\P06_Generics.AssemblyInfo.cs
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\P06_Generics.csproj.CoreCompileInputs.cache
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\P06_Generics.dll
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\ref\P06_Generics.dll
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\P06_Generics.pdb
+D:\Bernardo\Repositórios\Study - C#\P06_Generics\P06_Generics\obj\Debug\net5.0\P06_Generics.genruntimeconfig.cache
