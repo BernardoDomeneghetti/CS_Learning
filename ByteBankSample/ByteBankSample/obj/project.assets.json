@@ -1337,23 +1337,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Berna\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Bk Bank - Bkp 3\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Bernardo\\Repositórios\\Study - C#\\ByteBankSample\\ByteBankSample\\ByteBankSample.csproj",
+      "projectUniqueName": "C:\\Workspace\\projetos\\Study\\ByteBankSample\\ByteBankSample\\ByteBankSample.csproj",
       "projectName": "ByteBankSample",
-      "projectPath": "D:\\Bernardo\\Repositórios\\Study - C#\\ByteBankSample\\ByteBankSample\\ByteBankSample.csproj",
-      "packagesPath": "C:\\Users\\Berna\\.nuget\\packages\\",
-      "outputPath": "D:\\Bernardo\\Repositórios\\Study - C#\\ByteBankSample\\ByteBankSample\\obj\\",
+      "projectPath": "C:\\Workspace\\projetos\\Study\\ByteBankSample\\ByteBankSample\\ByteBankSample.csproj",
+      "packagesPath": "C:\\Users\\Bk Bank - Bkp 3\\.nuget\\packages\\",
+      "outputPath": "C:\\Workspace\\projetos\\Study\\ByteBankSample\\ByteBankSample\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Berna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bk Bank - Bkp 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1368,8 +1370,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Bernardo\\Repositórios\\Study - C#\\ByteBankSample\\ByteBank.Models\\ByteBank.Models.csproj": {
-              "projectPath": "D:\\Bernardo\\Repositórios\\Study - C#\\ByteBankSample\\ByteBank.Models\\ByteBank.Models.csproj"
+            "C:\\Workspace\\projetos\\Study\\ByteBankSample\\ByteBank.Models\\ByteBank.Models.csproj": {
+              "projectPath": "C:\\Workspace\\projetos\\Study\\ByteBankSample\\ByteBank.Models\\ByteBank.Models.csproj"
             }
           }
         }
