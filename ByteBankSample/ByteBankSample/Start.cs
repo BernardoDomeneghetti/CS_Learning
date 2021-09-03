@@ -1,9 +1,6 @@
-﻿using System;
-using ByteBank.models;
-using ByteBankSample.factories;
-using ByteBank.helpers;
-
-
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Builder;
+using System;
 
 namespace ByteBankSample
 {
@@ -11,7 +8,12 @@ namespace ByteBankSample
     {
         public static void Main(string[] args)
         {
-
+            IWebHost host = WebHostBuilder()
+                .UseKresnel()
+                .UseStartup<StartUp>
+                .Build();
         }
+
+        
     }
 }
