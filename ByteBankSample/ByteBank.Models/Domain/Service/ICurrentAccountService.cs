@@ -3,7 +3,7 @@ using ByteBankLib.Models.Response;
 
 namespace ByteBankLib.Domain.Service
 {
-    interface ICurrentAccountService
+    public interface ICurrentAccountService
     {
         public AccountCreationResponse RegisterNewAccount(Customer accountPrincipal, double initialValue);
         public AccountDepositResponse Deposit(int accountNumber, double value);

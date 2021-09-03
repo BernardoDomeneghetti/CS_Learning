@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ByteBankLib.Domain.Service
 {
-    class CurrentAccountService : ICurrentAccountService
+    public class CurrentAccountService : ICurrentAccountService
     {
         public AccountDepositResponse Deposit(int accountNumber, double value)
         {
