@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace ByteBank.models
+namespace ByteBankLib.Helpers
 {
     public static class AccountDataGeneratorHelper
     {
-        public static Int32 getAccountNumber()
+        public static Int32 GetAccountNumber()
         {
             Random randomizer = new Random();
             return randomizer.Next();
         }
-        public static Int32 getAccountSortCode()
+        public static Int32 GetAccountSortCode()
         {
             Random randomizer = new Random();
             return randomizer.Next();

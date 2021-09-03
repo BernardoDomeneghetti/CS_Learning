@@ -1,7 +1,9 @@
 ﻿using System;
-using ByteBank.models;
+using ByteBankLib.Models.Entities;
+using ByteBankLib.Helpers;
 
-namespace ByteBankSample.factories
+
+namespace ByteBankLib.Factories
 {
     class CurrentAccountFactory
     {
@@ -10,8 +12,8 @@ namespace ByteBankSample.factories
             Random randomizer = new Random();
             CurrentAccount ac = new CurrentAccount(
                                         principal, 
-                                        AccountDataGeneratorHelper.getAccountNumber(),
-                                        AccountDataGeneratorHelper.getAccountSortCode(),
+                                        AccountDataGeneratorHelper.GetAccountNumber(),
+                                        AccountDataGeneratorHelper.GetAccountSortCode(),
                                         initialBalance
                                     );
 

@@ -1,6 +1,6 @@
-﻿using ByteBank.models.enums;
+﻿using ByteBankLib.Models.Enums;
 
-namespace ByteBank.models.response
+namespace ByteBankLib.Models.Response
 {
     public class BaseResponse : IBaseResponse
     {

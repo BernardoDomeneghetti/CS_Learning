@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>ByteBank.Models</name>
+        <name>ByteBankLib</name>
     </assembly>
     <members>
         <member name="M:ByteBank.models.CurrentAccount.Withdraw(System.Double)">

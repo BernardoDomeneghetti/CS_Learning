@@ -1,4 +1,4 @@
-﻿namespace ByteBank.models.enums
+﻿namespace ByteBankLib.Models.Enums
 {
     public enum ErrorCodeEnum
     {

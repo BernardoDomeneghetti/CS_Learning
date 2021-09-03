@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace ByteBank.models {
+namespace ByteBankLib.Models.Entities
+{
     public class CurrentAccount : Account
     {
-        public static Int32 CreatedCurrentAccountAmount;
+        public static Dictionary<int, CurrentAccount> RegisteredCurrentAccounts { get; protected set; }
         public Double AccountLimit { get; private set; }
+        public static CurrentAccount GetAccountByNumber(int accountNumber)
+        {
+            return RegisteredCurrentAccounts[key: accountNumber];
+        }
         public CurrentAccount(
             Customer principal, 
             Int32 accountNumber, 
@@ -13,11 +19,7 @@ namespace ByteBank.models {
           base(principal, accountNumber, sortCode, initialBalance)
         {            
             this.AccountLimit = Balance * 0.1;
-
-            CreatedCurrentAccountAmount++;
-            CreatedAccountAmount++;
         }
-
         /// <summary>
         /// Withdraw method decreases balance's value ultil reaches the account debit limit.
         /// </summary>

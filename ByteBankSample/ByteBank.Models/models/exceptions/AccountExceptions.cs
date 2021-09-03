@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteBank.models
+namespace ByteBankLib.Models.Exceptions
 {
     public class InvalidDepositException : Exception
     {

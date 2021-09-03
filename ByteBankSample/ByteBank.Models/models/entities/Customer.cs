@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ByteBank.models
+namespace ByteBankLib.Models.Entities
 {
 	public class Customer
 	{
