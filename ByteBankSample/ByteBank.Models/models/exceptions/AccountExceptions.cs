@@ -17,4 +17,9 @@ namespace ByteBankLib.Models.Exceptions
         public InvalidWithdrawException() { }
         public InvalidWithdrawException(string message) : base(message) { }
     }
+    public class AccoutnNotFoundException : Exception
+    {
+        public AccoutnNotFoundException() { }
+        public AccoutnNotFoundException(string message) : base(message) { }
+    }
 }

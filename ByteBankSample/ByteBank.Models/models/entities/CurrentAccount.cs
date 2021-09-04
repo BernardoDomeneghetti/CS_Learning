@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using ByteBankLib.Models.Exceptions;
 
 namespace ByteBankLib.Models.Entities
 {
     public class CurrentAccount : Account
     {
-        public static Dictionary<int, CurrentAccount> RegisteredCurrentAccounts { get; protected set; }
         public Double AccountLimit { get; private set; }
-        public static CurrentAccount GetAccountByNumber(int accountNumber)
-        {
-            return RegisteredCurrentAccounts[key: accountNumber];
-        }
+        
         public CurrentAccount(
             Customer principal, 
             Int32 accountNumber, 

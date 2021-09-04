@@ -3,6 +3,16 @@ ByteBankSample/ByteBankSample/.vs/slnx.sqlite
 
 ByteBankSample/ByteBank.Models/obj/
 
+ByteBankSample/ByteBank.Models/bin/
+
+ByteBankSample/ByteBankWebMVC/bin/
+
+ByteBankSample/ByteBankWebMVC/obj/
+
+ByteBankSample/ByteBankSample/obj/
+
+ByteBankSample/ByteBankSample/bin/
+
 *.json
 
 *.props
@@ -16,3 +26,5 @@ ByteBankSample/ByteBankSample/.vs/ByteBankSample/v16/
 *.editorconfig
 
 *.txt
+
+*.xml

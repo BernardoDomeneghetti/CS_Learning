@@ -1,11 +1,12 @@
 ﻿using System;
 using ByteBankLib.Models.Entities;
 using ByteBankLib.Helpers;
+using ByteBankLib.Repository;
 
 
 namespace ByteBankLib.Factories
 {
-    class CurrentAccountFactory
+    public class CurrentAccountFactory
     {
         public static CurrentAccount GetNumberedCurrentAccount(Customer principal, Double initialBalance)
         {
@@ -16,6 +17,7 @@ namespace ByteBankLib.Factories
                                         AccountDataGeneratorHelper.GetAccountSortCode(),
                                         initialBalance
                                     );
+            CurrentAccountRepository.RegisteredCurrentAccounts.Add(ac.AccountNumber, ac);
 
             return ac;
         }

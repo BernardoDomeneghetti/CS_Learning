@@ -1,6 +1,23 @@
 ﻿@{
+    @model AccountCreationResponse
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+<p>@Model.CurrentAccount.AccountNumber</p>
+<p>@Model.CurrentAccount.AccountLimit</p>
+<p>@Model.CurrentAccount.Balance</p>
+<p>@Model.CurrentAccount.Principal.Name</p>
+
+<p>
+    @if (Model.Success)
+    {
+        <p>Teste</p>
+    }
+    else
+    {
+        <p>Teste 2</p>
+
+    }
+</p>

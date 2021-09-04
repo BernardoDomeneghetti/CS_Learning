@@ -2,7 +2,7 @@
 
 namespace ByteBankLib.Models.Response
 {
-    class AccountWithdrawResponse: BaseResponse
+    public class AccountWithdrawResponse: BaseResponse
     {
         public AccountWithdrawResponse(bool success, string message, ErrorCodeEnum errorCode):base(success, message, errorCode)
         {

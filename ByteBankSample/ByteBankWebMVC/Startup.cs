@@ -1,3 +1,4 @@
+using ByteBankLib.Domain.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,9 @@ namespace ByteBankWebMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+
+            services.AddScoped<ICurrentAccountService, CurrentAccountService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ByteBankLib.Models.Response
 {
-    class AccountListResponse: BaseResponse
+    public class AccountListResponse: BaseResponse
     {
         public List<IAccount> AccountList { get; private set; }
 

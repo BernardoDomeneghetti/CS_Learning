@@ -1,11 +1,8 @@
 ﻿using ByteBankLib.Models.Entities;
 using ByteBankLib.Models.Response;
 using ByteBankLib.Factories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ByteBankLib.Models.Exceptions;
+using ByteBankLib.Repository;
 
 namespace ByteBankLib.Domain.Service
 {
@@ -13,30 +10,39 @@ namespace ByteBankLib.Domain.Service
     {
         public AccountDepositResponse Deposit(int accountNumber, double value)
         {
-            CurrentAccount.GetAccountByNumber(accountNumber).Deposit(value);
-            return new AccountDepositResponse(true);
+            try
+            {
+                var ac = CurrentAccountRepository.GetAccountByNumber(accountNumber);
+                ac.Deposit(value);
+
+                return new AccountDepositResponse(true, ac.Balance);
+            }
+            catch (AccoutnNotFoundException)
+            {
+                return new AccountDepositResponse(false);
+            }
+            
         }
 
         public AccountIncreaseLimitResponse IncreaseLimit(int accountNumber, double value)
         {
-            CurrentAccount.GetAccountByNumber(accountNumber).IncreaseLimit(value);
+            CurrentAccountRepository.GetAccountByNumber(accountNumber).IncreaseLimit(value);
             return new AccountIncreaseLimitResponse(true);
         }
 
         public AccountListResponse ListRegisteredAccounts()
         {
-            return new AccountListResponse(true,Account.ListRegisteredAccounts());
+            return new AccountListResponse(true, CurrentAccountRepository.ListRegisteredAccounts());
         }
 
         public AccountCreationResponse RegisterNewAccount(Customer accountPrincipal, double initialValue)
         {
-            CurrentAccountFactory.GetNumberedCurrentAccount(accountPrincipal, initialValue);
-            return new AccountCreationResponse(true);
+            return new AccountCreationResponse(true, CurrentAccountFactory.GetNumberedCurrentAccount(accountPrincipal, initialValue).AccountNumber);
         }
 
         public AccountWithdrawResponse Withdraw(int accountNumber, double value)
         {
-            CurrentAccount.GetAccountByNumber(accountNumber).Withdraw(value);
+            CurrentAccountRepository.GetAccountByNumber(accountNumber).Withdraw(value);
             return new AccountWithdrawResponse(true);
         }
     }

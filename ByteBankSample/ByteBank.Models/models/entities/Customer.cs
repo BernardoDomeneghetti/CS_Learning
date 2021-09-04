@@ -9,8 +9,6 @@ namespace ByteBankLib.Models.Entities
         public String Status { get; private set; }
         public DateTime AssectionDate { get; }
 
-
-
         public Customer(string name, int cpf, int customerLevel, string status)
 		{			
 			Name = name;

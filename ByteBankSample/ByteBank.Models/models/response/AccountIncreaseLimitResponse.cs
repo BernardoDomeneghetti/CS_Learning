@@ -2,7 +2,7 @@
 
 namespace ByteBankLib.Models.Response
 {
-    class AccountIncreaseLimitResponse: BaseResponse
+    public class AccountIncreaseLimitResponse: BaseResponse
     {
         public AccountIncreaseLimitResponse(bool success, string message, ErrorCodeEnum errorCode):base(success, message, errorCode)
         {
