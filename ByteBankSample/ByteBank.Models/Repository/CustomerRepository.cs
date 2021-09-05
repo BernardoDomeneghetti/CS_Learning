@@ -13,15 +13,15 @@ namespace ByteBankLib.Repository
         {
             return RegisteredCustomers.Select(q => q.Value).ToList<Customer>();
         }
-        public static CurrentAccount GetAccountByNumber(int accountNumber)
+        public static Customer GetCustomerById(int customerId)
         {
-            if (RegisteredCustomers.ContainsKey(accountNumber))
+            if (RegisteredCustomers.ContainsKey(customerId))
             {
-                return RegisteredCurrentAccounts[key: accountNumber];
+                return RegisteredCustomers[key: customerId];
             }
             else
             {
-                throw new AccoutnNotFoundException("The number account was not found in the registered account's dictionary");
+                throw new CustomerNotFoundException("The customer id was not found in the registered account's dictionary");
             }
         }
     }

@@ -1,16 +1,21 @@
 ﻿using System;
+using ByteBankLib.Models.Enums;
+using ByteBankLib.Models.Exceptions;
+
 namespace ByteBankLib.Models.Entities
 {
 	public class Customer
 	{
-        public String Name { get;}
-		public Int32 Cpf { get;}
-		public Int32 CustomerLevel { get; private set; } //Change to Enum
-        public String Status { get; private set; }
+		public int Id { get; private set; }
+        public string Name { get;}
+		public int Cpf { get;}
+		public CustomerLevelEnum CustomerLevel { get; private set; } //Change to Enum
+        public string Status { get; private set; }
         public DateTime AssectionDate { get; }
 
-        public Customer(string name, int cpf, int customerLevel, string status)
-		{			
+        public Customer(int id, string name, int cpf, CustomerLevelEnum customerLevel, string status)
+		{
+			Id = id;
 			Name = name;
 			Cpf = cpf;
 			CustomerLevel = customerLevel;
@@ -18,8 +23,9 @@ namespace ByteBankLib.Models.Entities
 			AssectionDate = DateTime.Now;
 		}
 
-		public Customer(string name, int cpf)
-		{		
+		public Customer(int id, string name, int cpf)
+		{
+			Id = id;
 			Name = name;
 			Cpf = cpf;
 		}
@@ -31,7 +37,12 @@ namespace ByteBankLib.Models.Entities
 
 		public void Promote()
         {
+			if(CustomerLevel == CustomerLevelEnum.PremiumCustomer)
+            {
+				throw new CustomerPromotionLimitExcededException("This customer was already promoted to the max customer level");
+            }
 			this.CustomerLevel++;
+
         }
 	}
 }
