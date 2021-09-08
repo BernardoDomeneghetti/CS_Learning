@@ -6,14 +6,20 @@ using ByteBankLib.Models.Exceptions;
 
 namespace ByteBankLib.Repository
 {
-    public static class CustomerRepository
+    public class CustomerRepository: ICustomerRepository
     {
-        public static Dictionary<int, Customer>RegisteredCustomers{ get; set; }
-        public static List<Customer> ListRegisteredCustomers()
+        public readonly Dictionary<int, Customer> RegisteredCustomers;
+
+        public CustomerRepository(Dictionary<int, Customer> registeredCustomers)
+        {
+            RegisteredCustomers = registeredCustomers;
+        }
+
+        public List<Customer> ListRegisteredCustomers()
         {
             return RegisteredCustomers.Select(q => q.Value).ToList<Customer>();
         }
-        public static Customer GetCustomerById(int customerId)
+        public Customer GetCustomerById(int customerId)
         {
             if (RegisteredCustomers.ContainsKey(customerId))
             {
@@ -23,6 +29,10 @@ namespace ByteBankLib.Repository
             {
                 throw new CustomerNotFoundException("The customer id was not found in the registered account's dictionary");
             }
+        }
+        public void Attemp(Customer customer)
+        {
+            RegisteredCustomers.Add(customer.Id, customer);
         }
     }
 }

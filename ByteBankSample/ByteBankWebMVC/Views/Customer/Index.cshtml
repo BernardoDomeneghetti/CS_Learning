@@ -1,0 +1,28 @@
+﻿@*
+
+*@
+@{
+    ViewData["Title"] = "Curtomer register";
+}
+
+
+
+<form asp-area="" asp-controller="Customer" asp-action="RegisterNewCustomer">
+    <label>Name:</label>
+    <input name="name" />
+    <br />
+
+    <label>Cpf:</label>
+    <input name="cpf" />
+    <br />
+
+    <label>Customer level</label>
+    <input name="customerLevel" />
+    <br />
+
+    <label>Status</label>
+    <input name="status" />
+    <br/>
+
+    <button>Submit</button>
+</form>

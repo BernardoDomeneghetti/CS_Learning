@@ -14,7 +14,15 @@ namespace ByteBankLib.Models.Response
         {
             Success = success;
             Message = message;
-            ErrorCode = ErrorCodeEnum.NothingToDo;
+            if (success)
+            {
+                ErrorCode = ErrorCodeEnum.NothingToDo;
+            }
+            else
+            {
+                ErrorCode = ErrorCodeEnum.ServerError;
+            }
+            
         }
         public AccountIncreaseLimitResponse(bool success)
         {

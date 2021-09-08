@@ -2,62 +2,62 @@
 using ByteBankLib.Models.Enums;
 using ByteBankLib.Models.Exceptions;
 using ByteBankLib.Repository;
+using System.Collections.Generic;
 
 namespace ByteBankLib.Models.Response.CustomerResponses
 {
-    public class CustomerPromotionResponse:BaseResponse
+    public class CustomerListResponse:BaseResponse
     {
-        public Customer PromotedCustomer { get; set; }
+        public List<Customer> CustomerList { get; set; }
 
-        public CustomerPromotionResponse(bool success)
+        public CustomerListResponse(bool success)
         {
             if (success)
             {
                 throw new CustomerResponseMisusedConstructorException("This constructor should be used only to failed operations");
             }
-            Message = "Customer promotion failed";
+            Message = "Customer list failed";
             ErrorCode = ErrorCodeEnum.ServerError;
-            PromotedCustomer = null;
+            CustomerList = null;
         }
 
-        public CustomerPromotionResponse(bool success, string message, ErrorCodeEnum errorCode, Customer promotedCustomer) : base(success, message, errorCode)
+        public CustomerListResponse(bool success, string message, ErrorCodeEnum errorCode, List<Customer> CustomerList) : base(success, message, errorCode)
         {
             Success = success;
             Message = message;
             ErrorCode = errorCode;
-            PromotedCustomer = promotedCustomer;
-
+            CustomerList = CustomerList;
         }
-        public CustomerPromotionResponse(bool success, string message, Customer promotedCustomer) : base(success, message)
+        public CustomerListResponse(bool success, string message, List<Customer> CustomerList) : base(success, message)
         {
             Success = success;
             Message = message;
             if (success)
             {
                 ErrorCode = ErrorCodeEnum.NothingToDo;
-                PromotedCustomer = promotedCustomer;
+                CustomerList = CustomerList;
             }
             else
             {
                 ErrorCode = ErrorCodeEnum.ServerError;
-                PromotedCustomer = null;
+                CustomerList = null;
             }
             
         }
-        public CustomerPromotionResponse(bool success, Customer promotedCustomer)
+        public CustomerListResponse(bool success, List<Customer> CustomerList)
         {
             Success = success;
             if (success)
             {
-                Message = "Customer promoted successfully";
+                Message = "Customers listed successfully";
                 ErrorCode = ErrorCodeEnum.NothingToDo;
-                PromotedCustomer = promotedCustomer;
+                CustomerList = CustomerList;
             }
             else
             {
-                Message = "Customer promotion failed";
+                Message = "Customer list failed";
                 ErrorCode = ErrorCodeEnum.ServerError;
-                PromotedCustomer = null;
+                CustomerList = null;
             }
         }
 

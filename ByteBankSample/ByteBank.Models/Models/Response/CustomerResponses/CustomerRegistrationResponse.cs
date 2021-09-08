@@ -15,39 +15,47 @@ namespace ByteBankLib.Models.Response.CustomerResponses
             {
                 throw new CustomerResponseMisusedConstructorException("This constructor should be used only to failed operations");
             }
-            Message = "Customer registration failed";
+            Message = "Customer Registration failed";
             ErrorCode = ErrorCodeEnum.ServerError;
             RegisteredCustomer = null;
-
         }
 
-        public CustomerRegistrationResponse(bool success, string message, ErrorCodeEnum errorCode, int accountNumber) : base(success, message, errorCode)
+        public CustomerRegistrationResponse(bool success, string message, ErrorCodeEnum errorCode, Customer RegisteredCustomer) : base(success, message, errorCode)
         {
             Success = success;
             Message = message;
             ErrorCode = errorCode;
-            RegisteredCustomer = CustomerRepository.GetCustomerById(accountNumber);
+            RegisteredCustomer = RegisteredCustomer;
 
         }
-        public CustomerRegistrationResponse(bool success, string message, int customerId) : base(success, message)
+        public CustomerRegistrationResponse(bool success, string message, Customer RegisteredCustomer) : base(success, message)
         {
             Success = success;
             Message = message;
-            ErrorCode = ErrorCodeEnum.NothingToDo;
-            RegisteredCustomer = CustomerRepository.GetCustomerById(customerId);
+            if (success)
+            {
+                ErrorCode = ErrorCodeEnum.NothingToDo;
+                RegisteredCustomer = RegisteredCustomer;
+            }
+            else
+            {
+                ErrorCode = ErrorCodeEnum.ServerError;
+                RegisteredCustomer = null;
+            }
+            
         }
-        public CustomerRegistrationResponse(bool success, int customerId)
+        public CustomerRegistrationResponse(bool success, Customer registeredCustomer)
         {
             Success = success;
             if (success)
             {
-                Message = "Account created successfully";
+                Message = "Customer Registered successfully";
                 ErrorCode = ErrorCodeEnum.NothingToDo;
-                RegisteredCustomer = CustomerRepository.GetCustomerById(customerId);
+                RegisteredCustomer = registeredCustomer;
             }
             else
-            {
-                Message = "Account creation failed";
+            {                                                                       
+                Message = "Customer Registration failed";
                 ErrorCode = ErrorCodeEnum.ServerError;
                 RegisteredCustomer = null;
             }

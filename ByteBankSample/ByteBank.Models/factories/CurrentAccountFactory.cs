@@ -6,9 +6,16 @@ using ByteBankLib.Repository;
 
 namespace ByteBankLib.Factories
 {
-    public class CurrentAccountFactory
+    public class CurrentAccountFactory: ICurrentAccountFactory
     {
-        public static CurrentAccount GetNumberedCurrentAccount(Customer principal, Double initialBalance)
+        private ICurrentAccountRepository _currentAccountRepository;
+
+        public CurrentAccountFactory(ICurrentAccountRepository currentAccountRepository)
+        {
+            _currentAccountRepository = currentAccountRepository;
+        }
+
+        public CurrentAccount GetNew(Customer principal, Double initialBalance)
         {
             Random randomizer = new Random();
             CurrentAccount ac = new CurrentAccount(
@@ -17,7 +24,7 @@ namespace ByteBankLib.Factories
                                         AccountDataGeneratorHelper.GetAccountSortCode(),
                                         initialBalance
                                     );
-            CurrentAccountRepository.RegisteredCurrentAccounts.Add(ac.AccountNumber, ac);
+            _currentAccountRepository.Attemp(ac);
 
             return ac;
         }

@@ -8,4 +8,8 @@
     <ProjectReference Include="..\ByteBank.Models\ByteBankLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Register\" />
+  </ItemGroup>
+
 </Project>

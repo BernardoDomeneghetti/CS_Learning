@@ -6,23 +6,34 @@ using ByteBankLib.Models.Exceptions;
 
 namespace ByteBankLib.Repository
 {
-    public static class CurrentAccountRepository
-    {
-        public static Dictionary<int, CurrentAccount>RegisteredCurrentAccounts{ get; set; }
-        public static List<IAccount> ListRegisteredAccounts()
+    public class CurrentAccountRepository: ICurrentAccountRepository
+    {        
+
+        private readonly Dictionary<int, CurrentAccount> _registeredCurrentAccounts;
+
+        public CurrentAccountRepository(Dictionary<int, CurrentAccount> registeredCurrentAccounts)
         {
-            return RegisteredCurrentAccounts.Select(q => q.Value).ToList<IAccount>();
+            _registeredCurrentAccounts = registeredCurrentAccounts;
         }
-        public static CurrentAccount GetAccountByNumber(int accountNumber)
+
+        public List<IAccount> ListRegisteredAccounts()
         {
-            if (RegisteredCurrentAccounts.ContainsKey(accountNumber))
+            return _registeredCurrentAccounts.Select(q => q.Value).ToList<IAccount>();
+        }
+        public CurrentAccount GetAccountByNumber(int accountNumber)
+        {
+            if (_registeredCurrentAccounts.ContainsKey(accountNumber))
             {
-                return RegisteredCurrentAccounts[key: accountNumber];
+                return _registeredCurrentAccounts[key: accountNumber];
             }
             else
             {
                 throw new AccoutnNotFoundException("The number account was not found in the registered account's dictionary");
             }
+        }
+        public void Attemp(CurrentAccount account)
+        {
+            _registeredCurrentAccounts.Add(account.AccountNumber, account);
         }
     }
 }

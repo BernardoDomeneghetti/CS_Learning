@@ -7,7 +7,7 @@ namespace ByteBankLib.Models.Response.CustomerResponses
 {
     public class CustomerUnactivationResponse:BaseResponse
     {
-        public Customer RegisteredCustomer { get; set; }
+        public Customer UnactivatedCustomer { get; set; }
 
         public CustomerUnactivationResponse(bool success)
         {
@@ -15,50 +15,49 @@ namespace ByteBankLib.Models.Response.CustomerResponses
             {
                 throw new CustomerResponseMisusedConstructorException("This constructor should be used only to failed operations");
             }
-            Message = "Customer unactivation failed";
+            Message = "Customer Unactivation failed";
             ErrorCode = ErrorCodeEnum.ServerError;
-            RegisteredCustomer = null;
-
+            UnactivatedCustomer = null;
         }
 
-        public CustomerUnactivationResponse(bool success, string message, ErrorCodeEnum errorCode, int accountNumber) : base(success, message, errorCode)
+        public CustomerUnactivationResponse(bool success, string message, ErrorCodeEnum errorCode, Customer UnactivatedCustomer) : base(success, message, errorCode)
         {
             Success = success;
             Message = message;
             ErrorCode = errorCode;
-            RegisteredCustomer = CustomerRepository.GetCustomerById(accountNumber);
+            UnactivatedCustomer = UnactivatedCustomer;
 
         }
-        public CustomerUnactivationResponse(bool success, string message, int customerId) : base(success, message)
+        public CustomerUnactivationResponse(bool success, string message, Customer UnactivatedCustomer) : base(success, message)
         {
-            Success = success;
-            Message = message;
             Success = success;
             Message = message;
             if (success)
             {
                 ErrorCode = ErrorCodeEnum.NothingToDo;
+                UnactivatedCustomer = UnactivatedCustomer;
             }
             else
             {
                 ErrorCode = ErrorCodeEnum.ServerError;
+                UnactivatedCustomer = null;
             }
-            RegisteredCustomer = CustomerRepository.GetCustomerById(customerId);
+            
         }
-        public CustomerUnactivationResponse(bool success, int customerId)
+        public CustomerUnactivationResponse(bool success, Customer unactivatedCustomer)
         {
             Success = success;
             if (success)
             {
-                Message = "Customer unactivated successfully";
+                Message = "Customer promoted successfully";
                 ErrorCode = ErrorCodeEnum.NothingToDo;
-                RegisteredCustomer = CustomerRepository.GetCustomerById(customerId);
+                UnactivatedCustomer = unactivatedCustomer;
             }
             else
-            {
-                Message = "Account unactivation failed";
+            {                                                                       
+                Message = "Customer Unactivation failed";
                 ErrorCode = ErrorCodeEnum.ServerError;
-                RegisteredCustomer = null;
+                UnactivatedCustomer = null;
             }
         }
 
