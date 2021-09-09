@@ -24,11 +24,14 @@ namespace ByteBankWebMVC.Controllers
         {
             return View();
         }
-        public IActionResult RegisterNewCustomer([FromQuery]string name, int cpf, int customerLevel, string status)
-        {               
-            _customerService.RegisterNewCustomer(name, cpf, (CustomerLevelEnum)customerLevel, status );
+
+        public IActionResult RegisterNewCustomer([FromBody]string name, int cpf, int customerLevel, string status)
+        {
             
-            return View("CustomerRegisterSuccessfulll");
+            _customerService.RegisterNewCustomer(name, cpf, (CustomerLevelEnum)customerLevel, status);
+            
+            return View("CustomerRegisterSuccessfull");
         }
+        
     }
 }

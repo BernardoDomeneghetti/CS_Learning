@@ -7,22 +7,22 @@
 
 
 
-<form asp-area="" asp-controller="Customer" asp-action="RegisterNewCustomer">
+<form asp-controller="Customer" asp-action="RegisterNewCustomer" method="post">
     <label>Name:</label>
-    <input name="name" />
-    <br />
-
-    <label>Cpf:</label>
-    <input name="cpf" />
-    <br />
-
-    <label>Customer level</label>
-    <input name="customerLevel" />
-    <br />
-
-    <label>Status</label>
-    <input name="status" />
+    <input name="name" type="text"/>
     <br/>
 
-    <button>Submit</button>
+    <label>Cpf:</label>
+    <input name="cpf" type="number"/>
+    <br/>
+
+    <label>Customer level</label>
+    <input name="customerLevel" type="number"/>
+    <br/>
+
+    <label>Status</label>
+    <input name="status" type="text" />
+    <br/>
+
+    <input type ="submit" value="Submit"/>
 </form>
