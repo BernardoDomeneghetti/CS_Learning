@@ -39,8 +39,8 @@ namespace HolidaysFeederService.Services.Main
                 );                
             }
 
-            var easterFriday = Convert.ToDateTime($"01/01/{year}");
-            while (easterFriday.DayOfWeek != DayOfWeek.Saturday)
+            var easterFriday = Convert.ToDateTime($"01/04/{year}");
+            while (easterFriday.DayOfWeek != DayOfWeek.Friday)
             {
                 easterFriday = easterFriday.AddDays(1);
             }
