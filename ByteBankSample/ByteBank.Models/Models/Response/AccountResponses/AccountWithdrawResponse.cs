@@ -1,34 +1,13 @@
 ﻿using ByteBankLib.Models.Enums;
+using ByteBankLib.Models.Entities;
 
-namespace ByteBankLib.Models.Response
+namespace ByteBankLib.Models.Response.AccountResponses
 {
-    public class AccountWithdrawResponse: BaseResponse
+    public class AccountWithdrawResponse: AccountResponse
     {
-        public AccountWithdrawResponse(bool success, string message, ErrorCodeEnum errorCode):base(success, message, errorCode)
+        public AccountWithdrawResponse(bool success, string message, ErrorCodeEnum errorCode, Account account):base(success, message, errorCode, account)
         {
-            Success = success;
-            Message = message;
-            ErrorCode = errorCode;
         }
-        public AccountWithdrawResponse(bool success, string message): base(success, message)
-        {
-            Success = success;
-            Message = message;
-            ErrorCode = ErrorCodeEnum.NothingToDo;
-        }
-        public AccountWithdrawResponse(bool success)
-        {
-            Success = success;
-            if (success)
-            {
-                Message = "Withdraw successeded";
-                ErrorCode = ErrorCodeEnum.NothingToDo;
-            }
-            else
-            {
-                Message = "Withdraw failed";
-                ErrorCode = ErrorCodeEnum.ServerError;
-            }
-        }
+        
     }
 }

@@ -1,5 +1,5 @@
 ﻿using ByteBankLib.Models.Entities;
-using ByteBankLib.Models.Response;
+using ByteBankLib.Models.Response.AccountResponses;
 
 namespace ByteBankLib.Domain.Service
 {

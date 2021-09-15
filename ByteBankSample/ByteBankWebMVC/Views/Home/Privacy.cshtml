@@ -1,14 +1,13 @@
 ﻿@{
-    @model AccountCreationResponse
+    @model ByteBankLib.Models.Response.AccountResponses.AccountCreationResponse
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
 
-<p>@Model.CurrentAccount.AccountNumber</p>
-<p>@Model.CurrentAccount.AccountLimit</p>
-<p>@Model.CurrentAccount.Balance</p>
-<p>@Model.CurrentAccount.Principal.Name</p>
+<p>@Model.Account.AccountNumber</p>
+<p>@Model.Account.Balance</p>
+<p>@Model.Account.Principal.Name</p>
 
 <p>
     @if (Model.Success)

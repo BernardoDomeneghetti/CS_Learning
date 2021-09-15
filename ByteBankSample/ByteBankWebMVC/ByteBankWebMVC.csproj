@@ -5,11 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ByteBank.Models\ByteBankLib.csproj" />
+    <Compile Remove="Views\Register\**" />
+    <Content Remove="Views\Register\**" />
+    <EmbeddedResource Remove="Views\Register\**" />
+    <None Remove="Views\Register\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Register\" />
+    <ProjectReference Include="..\ByteBank.Models\ByteBankLib.csproj" />
   </ItemGroup>
 
 </Project>

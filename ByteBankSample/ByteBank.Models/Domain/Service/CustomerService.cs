@@ -19,28 +19,90 @@ namespace ByteBankLib.Domain.Service
 
         public CustomerPromotionResponse Promote(int customerId)
         {
-            var cus = _customerRepository.GetCustomerById(customerId);
-            cus.Promote();
+            try
+            {
+                var customer = _customerRepository.GetCustomerById(customerId);
+                customer.Promote();
+                var response =
+                        new CustomerPromotionResponse(
+                            true,
+                            "Customer promoted successfully!",
+                            ErrorCodeEnum.NothingToDo,
+                            customer
+                        );
+                return response;
 
-            return new CustomerPromotionResponse(true, cus);
+            }
+            catch (Exception e)
+            {
+                return new CustomerPromotionResponse(
+                    false,
+                    $"ERROR´: Customer promotion failed {e.Message}",
+                    ErrorCodeEnum.ServerError, null
+                   );
+            }
         }
         public CustomerListResponse ListCustomers(int customerId)
         {
-            return new CustomerListResponse(true, _customerRepository.ListRegisteredCustomers());
+            try
+            {
+                var customersList = _customerRepository.ListRegisteredCustomers();
+                var response = new CustomerListResponse(true, "Customer listing successeded!", ErrorCodeEnum.NothingToDo, customersList );
+                return response;
+            }catch(Exception e)
+            {
+                return new CustomerListResponse(true, "Customer listing failed!", ErrorCodeEnum.ServerError, null);
+            }
+            
         }
         public CustomerRegistrationResponse RegisterNewCustomer(string name, int cpf, CustomerLevelEnum customerLevel, string status)
-        {            
-            return new CustomerRegistrationResponse(
-                true, 
-                _customerFactory.GetNew(name, cpf, customerLevel, status)
-            );
+        {
+            try
+            {
+                var customer = _customerFactory.GetNew(name, cpf, customerLevel, status);
+                var response = 
+                        new CustomerRegistrationResponse(
+                            true,
+                            "Customer registered successfully!",
+                            ErrorCodeEnum.NothingToDo,
+                            customer
+                        );
+                return response;
+
+            }
+            catch(Exception e)
+            {
+                return new CustomerRegistrationResponse(
+                    false, 
+                    $"ERROR´: Customer Registration failed {e.Message}", 
+                    ErrorCodeEnum.ServerError,null
+                   );
+            }
         }
         public CustomerUnactivationResponse Unactivate(int customerId)
         {
-            var cus = _customerRepository.GetCustomerById(customerId);
-            cus.Unactivate();
+            try
+            {
+                var customer = _customerRepository.GetCustomerById(customerId);
+                customer.Unactivate();
+                var response =
+                        new CustomerUnactivationResponse(
+                            true,
+                            "Customer unactivation successfully!",
+                            ErrorCodeEnum.NothingToDo,
+                            customer
+                        );
+                return response;
 
-            return new CustomerUnactivationResponse(true, cus);
+            }
+            catch (Exception e)
+            {
+                return new CustomerUnactivationResponse(
+                    false,
+                    $"ERROR´: Customer unactivation failed {e.Message}",
+                    ErrorCodeEnum.ServerError, null
+                   );
+            }
         }
     }
 }

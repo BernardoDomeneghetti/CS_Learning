@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using ByteBankLib.Factories;
+using ByteBankLib.Models.Entities;
+
 
 namespace ByteBankWebMVC.Controllers
 {
@@ -32,16 +34,16 @@ namespace ByteBankWebMVC.Controllers
         public IActionResult Privacy()
         {
 
-            var AccoutCreation = _currentAccountService.RegisterNewAccount(_customerFactory.GetNew("Bernardo", 123, 0, "ATIVO"),100);
-            var teste = _currentAccountService.Deposit(AccoutCreation.CurrentAccount.AccountNumber, 10);
+            var AccountCreation = _currentAccountService.RegisterNewAccount(_customerFactory.GetNew("Bernardo", 123, 0, "ATIVO"),100);
+            var teste = _currentAccountService.Deposit(AccountCreation.Account.AccountNumber, 10);
 
-            return View(AccoutCreation);           
+            return View(AccountCreation);           
         }
 
         public IActionResult Teste()
         {
-            var AccoutCreation = _currentAccountService.RegisterNewAccount(_customerFactory.GetNew("Bernardo", 123, 0, "ATIVO"), 100);
-            var teste = _currentAccountService.Deposit(AccoutCreation.CurrentAccount.AccountNumber, 10);
+            var AccountCreation = _currentAccountService.RegisterNewAccount(_customerFactory.GetNew("Bernardo", 123, 0, "ATIVO"), 100);
+            var teste = _currentAccountService.Deposit(AccountCreation.Account.AccountNumber, 10);
      
             return View(teste);
         }
