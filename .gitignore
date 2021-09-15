@@ -28,3 +28,10 @@ ByteBankSample/ByteBankSample/.vs/ByteBankSample/v16/
 *.txt
 
 *.xml
+*.dll
+*.exe
+*.pdb
+*.user
+P07_IO/.vs/slnx.sqlite
+*.suo
+*.v2
