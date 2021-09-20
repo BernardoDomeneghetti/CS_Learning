@@ -13,8 +13,6 @@ ByteBankSample/ByteBankSample/obj/
 
 ByteBankSample/ByteBankSample/bin/
 
-*.json
-
 *.props
 
 ByteBankSample/ByteBankSample/.vs/ByteBankSample/v16/
@@ -36,3 +34,45 @@ P07_IO/.vs/slnx.sqlite
 *.suo
 *.v2
 *.config
+CasaDoCodigo/CasaDoCodigo/bundleconfig.json
+CasaDoCodigo/CasaDoCodigo/appsettings.json
+ByteBankSample/.vs/ProjectSettings.json
+ByteBankSample/.vs/VSWorkspaceState.json
+ByteBankSample/ByteBankWebMVC/appsettings.Development.json
+ByteBankSample/ByteBankWebMVC/appsettings.json
+CasaDoCodigo/CasaDoCodigo/appsettings.Development.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.0/appsettings.Development.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.0/appsettings.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.0/bundleconfig.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.0/CasaDoCodigo.deps.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.0/CasaDoCodigo.runtimeconfig.dev.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.0/CasaDoCodigo.runtimeconfig.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.1/appsettings.Development.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.1/appsettings.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.1/bundleconfig.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.1/CasaDoCodigo.deps.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.1/CasaDoCodigo.runtimeconfig.dev.json
+CasaDoCodigo/CasaDoCodigo/bin/Debug/netcoreapp2.1/CasaDoCodigo.runtimeconfig.json
+CasaDoCodigo/CasaDoCodigo/obj/CasaDoCodigo.csproj.nuget.dgspec.json
+CasaDoCodigo/CasaDoCodigo/obj/project.assets.json
+CasaDoCodigo/CasaDoCodigo/obj/Debug/netcoreapp2.0/.NETCoreApp,Version=v2.0.AssemblyAttributes.cs
+CasaDoCodigo/CasaDoCodigo/obj/Debug/netcoreapp2.0/CasaDoCodigo.AssemblyInfo.cs
+CasaDoCodigo/CasaDoCodigo/Properties/launchSettings.json
+CasaDoCodigo/CasaDoCodigo/wwwroot/lib/bootstrap/.bower.json
+CasaDoCodigo/CasaDoCodigo/wwwroot/lib/jquery/.bower.json
+CasaDoCodigo/CasaDoCodigo/wwwroot/lib/jquery-validation/.bower.json
+CasaDoCodigo/CasaDoCodigo/wwwroot/lib/jquery-validation-unobtrusive/.bower.json
+CasaDoCodigo/DataBase/CasaDoCodigo.ldf
+CasaDoCodigo/DataBase/CasaDoCodigo.mdf
+HolidaysFeederService/HolidaysFeederService/HolidaysFeederService/bin/Debug/netcoreapp3.1/HolidaysFeederService.deps.json
+HolidaysFeederService/HolidaysFeederService/HolidaysFeederService/bin/Debug/netcoreapp3.1/HolidaysFeederService.runtimeconfig.dev.json
+HolidaysFeederService/HolidaysFeederService/HolidaysFeederService/bin/Debug/netcoreapp3.1/HolidaysFeederService.runtimeconfig.json
+HolidaysFeederService/HolidaysFeederService/HolidaysFeederService/obj/HolidaysFeederService.csproj.nuget.dgspec.json
+HolidaysFeederService/HolidaysFeederService/HolidaysFeederService/obj/project.assets.json
+P07_IO/P07_IO/P07_IO/bin/Debug/net5.0/P07_IO.deps.json
+P07_IO/P07_IO/P07_IO/bin/Debug/net5.0/P07_IO.runtimeconfig.dev.json
+P07_IO/P07_IO/P07_IO/bin/Debug/net5.0/P07_IO.runtimeconfig.json
+P07_IO/P07_IO/P07_IO/obj/P07_IO.csproj.nuget.dgspec.json
+P07_IO/P07_IO/P07_IO/obj/project.assets.json
+*.g.cs
+ByteBankSample/ByteBankWebMVC/Properties/launchSettings.json
