@@ -10,11 +10,11 @@ namespace CasaDoCodigo.Models.Entities
         }
 
         [Required]
-        public int Codigo { get; private set; }
+        public int Codigo { get; set; }
         [Required]
-        public string Nome { get; private set; }
+        public string Nome { get; set; }
         [Required]
-        public decimal Preco { get; private set; }
+        public decimal Preco { get; set; }
 
         public Produto(int codigo, string nome, decimal preco)
         {

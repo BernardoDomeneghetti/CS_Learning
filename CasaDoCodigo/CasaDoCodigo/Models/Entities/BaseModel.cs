@@ -4,10 +4,8 @@ using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models.Entities { 
-    [DataContract]
     public class BaseModel
     {
-        [DataMember]
         public int Id { get; protected set; }
     }
 }
