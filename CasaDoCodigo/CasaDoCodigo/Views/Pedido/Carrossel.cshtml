@@ -1,37 +1,52 @@
-﻿@model List<CasaDoCodigo.Models.Entities.Produto> 
+﻿@{
+    ViewData["Model"] = "Carrossel";
+}
+@model List<CasaDoCodigo.Models.Entities.Produto>
 
 <h3>Catálogo</h3>
 
 <div id="my-carousel" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <div class="row">
-                @{var rowProducts = Model.Take(4);} 
-                @foreach (var produto in rowProducts)
-                {
-                     <div class="col-md-3 col-sm-3 col-lg-3">
-                         <div class="panel panel-default">
+        @{
+            const int PAGE_SIZE = 4;
 
-                             <div class="panel-body">
-                                <img class="img-produto-carrossel" src="/images/produtos/large_@(produto.Codigo.ToString("D3")).jpg" />
-                             </div>
+            int pageAmount = (int)Math.Ceiling((double)Model.Count / PAGE_SIZE);
 
-                             <div class="panel-footer produto-footer">
-                                 <div class="produto-nome">@(produto.Nome)</div>
-                                 <div><h4><strong>R$@(produto.Preco.ToString())</strong></h4></div>
-                                 <div class="text-center">
-                                     <a href="/" class="btn btn-success">Adicionar</a>
-                                 </div>
-                             </div>
-                    
-                         </div>
-                     </div>
-                 }
+            for (var i = 0; i < pageAmount; i++)
+            {
+                <div class="item @((i == 0)? "active": "" )">
+                    <div class="row">
+                        @{var rowProducts = Model.Skip(i * PAGE_SIZE).Take(PAGE_SIZE);}
+                        @foreach (var produto in rowProducts)
+                        {
+                            <div class="col-md-3 col-sm-3 col-lg-3">
+                                <div class="panel panel-default">
 
-            </div>
-        </div>
-        
+                                    <div class="panel-body">
+                                        <img class="img-produto-carrossel" src="/images/produtos/large_@(produto.Codigo.ToString("D3")).jpg" />
+                                    </div>
+
+                                    <div class="panel-footer produto-footer">
+                                        <div class="produto-nome">@(produto.Nome)</div>
+                                        <div><h4><strong>R$@(produto.Preco.ToString())</strong></h4></div>
+                                        <div class="text-center">
+                                            <a 
+                                               asp-controller="Pedido" 
+                                               asp-action="Carrinho" 
+                                               asp-route-codigo="@produto.Codigo"
+                                               class="btn btn-success">Adicionar</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            }
+        }
     </div>
 
     <!-- Controls -->

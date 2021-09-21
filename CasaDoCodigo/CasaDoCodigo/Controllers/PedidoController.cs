@@ -26,8 +26,9 @@ namespace CasaDoCodigo.Controllers
         //--------------------------------------CORRIGIR
 
 
-        public IActionResult Carrinho()
+        public IActionResult Carrinho(int codigo)
         {
+            var teste = codigo;
             return View();
         }
 

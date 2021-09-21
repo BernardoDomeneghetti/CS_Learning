@@ -36,3 +36,5 @@ P07_IO/.vs/slnx.sqlite
 *.suo
 *.v2
 *.config
+*.ldf
+*.mdf
