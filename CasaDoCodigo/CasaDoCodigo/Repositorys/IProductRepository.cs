@@ -6,12 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace CasaDoCodigo.Repositorys
 {
-    public interface IProductRepository
+    public interface IProductRepository: IBaseRepository<Produto>
     {
-        ProductJsonImportResponse ImportProductsJson(List<Produto> produtos);
-
-        ProductListResponse ListProducts();
     }
 }

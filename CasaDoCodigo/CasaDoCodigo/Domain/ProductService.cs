@@ -19,15 +19,15 @@ namespace CasaDoCodigo.Services
             _repository = repository;
         }
 
-        public ProductJsonImportResponse ProductJsonImport(string jsonString)
+        public RepositoryImportResponse<Produto> ProductJsonImport(string jsonString)
         {
             var produtos = JsonConvert.DeserializeObject<List<Produto>>(jsonString);
-            return _repository.ImportProductsJson(produtos);
+            return _repository.ImportDataFromList(produtos);
         }
 
-        public ProductListResponse ListProducts()
+        public RepositoryListResponse<Produto> ListProducts()
         {
-            return _repository.ListProducts();
+            return _repository.ListDataFromEntity();
         }
     }
 }

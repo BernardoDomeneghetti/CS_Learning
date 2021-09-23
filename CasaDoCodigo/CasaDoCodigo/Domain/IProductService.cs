@@ -12,7 +12,6 @@ namespace CasaDoCodigo.Services
 {
     public interface IProductService
     {
-        ProductJsonImportResponse ProductJsonImport(string json);
-        ProductListResponse ListProducts();
+        RepositoryListResponse<Produto> ListProducts();
     }
 }

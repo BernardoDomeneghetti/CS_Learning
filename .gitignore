@@ -34,6 +34,13 @@ P07_IO/.vs/slnx.sqlite
 *.suo
 *.v2
 *.config
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+*.ldf
+*.mdf
+=======
+>>>>>>> Home
 CasaDoCodigo/CasaDoCodigo/bundleconfig.json
 CasaDoCodigo/CasaDoCodigo/appsettings.json
 ByteBankSample/.vs/ProjectSettings.json
@@ -76,3 +83,7 @@ P07_IO/P07_IO/P07_IO/obj/P07_IO.csproj.nuget.dgspec.json
 P07_IO/P07_IO/P07_IO/obj/project.assets.json
 *.g.cs
 ByteBankSample/ByteBankWebMVC/Properties/launchSettings.json
+<<<<<<< HEAD
+=======
+>>>>>>> e65d279 (002)
+>>>>>>> Home

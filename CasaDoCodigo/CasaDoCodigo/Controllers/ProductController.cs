@@ -10,15 +10,19 @@ namespace CasaDoCodigo.Controllers
     public class ProductController: Controller
     {
         private readonly IProductService _productService;
-        public ProductController(ProductService productService)
+        public ProductController(IProductService productService)
         {
             this._productService = productService;
         }
+        public IActionResult Index()
+        {            
+            return View("Carrossel");
+        }
 
-        public IActionResult ProductsList()
+        public IActionResult Carrossel()
         {
-            var response = _productService.ListProducts();  
-            return View(response.Products);
+            var response = _productService.ListProducts();
+            return View(response);
         }
     }
 }
