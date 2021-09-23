@@ -37,9 +37,13 @@ namespace CasaDoCodigo
             string connectionString = Configuration.GetConnectionString("Default");
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
+            services.AddDistributedMemoryCache();
+            services.AddSession();
             services.AddTransient<IDataService, DataService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IPedidoRepository, PedidoRepository>();
+            services.AddTransient<IItemPedidoRepository, ItemPedidoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,13 +61,14 @@ namespace CasaDoCodigo
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Pedido}/{action=Carrossel}/{id?}");
+                    template: "{controller=Product}/{action=Index}/{id?}");
             });
 
             serviceProvider.GetService<IDataService>().InitializeDB();
