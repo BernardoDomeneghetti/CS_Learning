@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CasaDoCodigo.Models.Entities;
-using Microsoft.AspNetCore.Http;
+﻿using CasaDoCodigo.Models.Entities;
+using CasaDoCodigo.Models.Responses;
 
 namespace CasaDoCodigo.Repositorys
 {
-    public interface IPedidoRepository: IBaseRepository<Pedido>
-    {        
-        int GetPedidoId();
+    public interface IPedidoRepository : IBaseRepository<Pedido>
+    {
     }
 }

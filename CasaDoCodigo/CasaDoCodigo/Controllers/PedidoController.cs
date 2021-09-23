@@ -9,9 +9,15 @@ namespace CasaDoCodigo.Controllers
 {
     public class PedidoController : Controller
     {
+        private readonly IPedidoService _pedidoService;
+
+        public PedidoController(IPedidoService pedidoService)
+        {
+            _pedidoService = pedidoService;
+        }
+
         public IActionResult Carrinho(int codigo)
         {
-            var teste = codigo;
             return View();
         }
 
