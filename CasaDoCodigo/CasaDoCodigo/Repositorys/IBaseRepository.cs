@@ -12,5 +12,11 @@ namespace CasaDoCodigo.Repositorys
         RepositoryImportResponse<T> ImportDataFromList(List<T> items);
 
         RepositoryListResponse<T> ListDataFromEntity();
+
+        RepositorySetInstanceByID<T> InsertNewInstance(T instance);
+
+        RepositoryGetInstanceByID<T> GetInstanceById(int instanceId);
+
+
     }
 }
