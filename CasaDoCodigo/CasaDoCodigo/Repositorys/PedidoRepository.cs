@@ -6,10 +6,10 @@ namespace CasaDoCodigo.Repositorys
 {
     public class PedidoRepository :BaseRepository<Pedido>, IPedidoRepository
     {
-        private readonly IHttpContextAccessor _acessor;
-        public PedidoRepository(ApplicationContext dbContext, IHttpContextAccessor acessor) : base(dbContext)
+        /*private readonly IHttpContextAccessor _acessor;*/
+        public PedidoRepository(ApplicationContext dbContext/*, IHttpContextAccessor acessor*/) : base(dbContext)
         {
-            _acessor = acessor;
+            /*_acessor = acessor;*/
         }
 
     }

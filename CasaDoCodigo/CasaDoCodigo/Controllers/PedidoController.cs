@@ -18,7 +18,7 @@ namespace CasaDoCodigo.Controllers
 
         public IActionResult Carrinho(int codigo)
         {
-            return View();
+            return View(_pedidoService.GetPedido(codigo).Instance);
         }
 
         public IActionResult Resumo()

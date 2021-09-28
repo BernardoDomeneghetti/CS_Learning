@@ -6,10 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CasaDoCodigo.Models;
 using CasaDoCodigo.Models.Exceptions;
-<<<<<<< HEAD:CasaDoCodigo/CasaDoCodigo/Services/DataService.cs
-=======
 using Microsoft.EntityFrameworkCore;
->>>>>>> Home:CasaDoCodigo/CasaDoCodigo/Domain/DataService.cs
+
 
 namespace CasaDoCodigo.Services
 {
@@ -26,31 +24,21 @@ namespace CasaDoCodigo.Services
         {
             try
             {
-<<<<<<< HEAD:CasaDoCodigo/CasaDoCodigo/Services/DataService.cs
-                //if (!context.Database.EnsureCreated())
-                //{
-                //    throw new DatabaseAlreadyCreatedException("Database already created");
-                //}
-=======
-                //context.Database.Migrate();
->>>>>>> Home:CasaDoCodigo/CasaDoCodigo/Domain/DataService.cs
+
+                if (!context.Database.EnsureCreated())
+                {
+                    throw new DatabaseAlreadyCreatedException("Database already created");
+                }
+
+                context.Database.Migrate();
+
                 var jsonString = File.ReadAllText("livros.json");
                 new ProductService(new Repositorys.ProductRepository(context)).ProductJsonImport(jsonString);
 
             }
-<<<<<<< HEAD:CasaDoCodigo/CasaDoCodigo/Services/DataService.cs
-            catch (DatabaseAlreadyCreatedException) { }
-=======
-            catch (Exception e)
-            {
-                if(!e.Message.Contains("already"))
-                {
-                    throw;
-                }
-            }
->>>>>>> Home:CasaDoCodigo/CasaDoCodigo/Domain/DataService.cs
-        }
 
+            catch (DatabaseAlreadyCreatedException) { }
+        }
         
 
     }

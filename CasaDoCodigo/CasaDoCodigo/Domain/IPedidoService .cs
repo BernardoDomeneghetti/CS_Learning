@@ -13,5 +13,6 @@ namespace CasaDoCodigo.Services
     public interface IPedidoService
     {
         RepositoryListResponse<Pedido> ListProducts();
+        RepositoryGetInstanceByID<Pedido> GetPedido(int IdPedido);
     }
 }

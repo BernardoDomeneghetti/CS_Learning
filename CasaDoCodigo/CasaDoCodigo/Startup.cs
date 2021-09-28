@@ -42,9 +42,10 @@ namespace CasaDoCodigo
             services.AddTransient<IDataService, DataService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IPedidoService, PedidoService>();
             services.AddTransient<IPedidoRepository, PedidoRepository>();
             services.AddTransient<IItemPedidoRepository, ItemPedidoRepository>();
-            services.AddTransient<IPedidoService, PedidoService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,7 +70,7 @@ namespace CasaDoCodigo
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Product}/{action=Index}/{id?}");
+                    template: "{controller=Product}/{action=Carrossel}/{id?}");
             });
 
             serviceProvider.GetService<IDataService>().InitializeDB();

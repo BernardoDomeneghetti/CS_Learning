@@ -14,15 +14,11 @@ namespace CasaDoCodigo.Controllers
         {
             this._productService = productService;
         }
-        public IActionResult Index()
-        {            
-            return View("Carrossel");
-        }
 
         public IActionResult Carrossel()
         {
             var response = _productService.ListProducts();
-            return View(response);
+            return View(response.Items);
         }
     }
 }
