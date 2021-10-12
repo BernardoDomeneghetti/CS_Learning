@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Repositorys
 {
-    public class ProductRepository : BaseRepository<Produto>, IProductRepository
+    public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         public ProductRepository(ApplicationContext dbContext) : base(dbContext)
         {

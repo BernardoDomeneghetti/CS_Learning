@@ -9,8 +9,8 @@ namespace CasaDoCodigo.Models.Responses
 {
     public class ProductJsonImportResponse : BaseResponse
     {
-        public List<Produto> ImportedProducts { get; private set; }
-        public ProductJsonImportResponse(bool success, string message, List<Produto> importedProducts) : base(success, message)
+        public List<Product> ImportedProducts { get; private set; }
+        public ProductJsonImportResponse(bool success, string message, List<Product> importedProducts) : base(success, message)
         {
             ImportedProducts = importedProducts;
         }

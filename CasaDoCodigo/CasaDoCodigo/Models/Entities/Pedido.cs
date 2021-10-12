@@ -15,8 +15,8 @@ namespace CasaDoCodigo.Models.Entities
             Cadastro = cadastro;
         }
 
-        public List<ItemPedido> Itens { get; private set; } = new List<ItemPedido>();
+        public List<ItemPedido> Itens { get;  set; } = new List<ItemPedido>();
         [Required]
-        public virtual Cadastro Cadastro { get; private set; }
+        public virtual Cadastro Cadastro { get;  set; }
     }
 }

@@ -5,20 +5,20 @@ namespace CasaDoCodigo.Models.Entities
     public class ItemPedido : BaseModel
     {   
         [Required]
-        public Pedido Pedido { get; private set; }
+        public Pedido Pedido { get; set; }
         [Required]
-        public Produto Produto { get; private set; }
+        public Product Produto { get; set; }
         [Required]
-        public int Quantidade { get; private set; }
+        public int Quantidade { get; set; }
         [Required]
-        public decimal PrecoUnitario { get; private set; }
+        public decimal PrecoUnitario { get; set; }
 
         public ItemPedido()
         {
 
         }
 
-        public ItemPedido(Pedido pedido, Produto produto, int quantidade, decimal precoUnitario)
+        public ItemPedido(Pedido pedido, Product produto, int quantidade, decimal precoUnitario)
         {
             Pedido = pedido;
             Produto = produto;

@@ -13,7 +13,7 @@ namespace CasaDoCodigo.Repositorys
 
         RepositoryListResponse<T> ListDataFromEntity();
 
-        RepositorySetInstanceByID<T> InsertNewInstance(T instance);
+        RepositorySetInstance<T> InsertNewInstance(T instance);
 
         RepositoryGetInstanceByID<T> GetInstanceById(int instanceId);
 

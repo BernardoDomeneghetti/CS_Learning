@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Repositorys
 {
-    public interface IProductRepository: IBaseRepository<Produto>
+    public interface IProductRepository: IBaseRepository<Product>
     {
     }
 }

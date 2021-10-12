@@ -1,4 +1,5 @@
-﻿using CasaDoCodigo.Services;
+﻿using CasaDoCodigo.Models.Responses;
+using CasaDoCodigo.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,19 @@ namespace CasaDoCodigo.Controllers
             _pedidoService = pedidoService;
         }
 
-        public IActionResult Carrinho(int codigo)
+        public IActionResult Cart()
         {
-            return View(_pedidoService.GetPedido(codigo).Instance);
+            var pedidoId = _pedidoService.GetIdPedidoFromSession();
+            return View(_pedidoService.GetPedidoById(pedidoId));
+        }
+
+        public IActionResult AddProductToCart(int productCode)
+        {
+            var pedidoId = _pedidoService.GetIdPedidoFromSession();
+
+            AddProductToCartResponse response = _pedidoService.AddProductToPedido(pedidoId, productCode);
+            
+            return View("Carrinho", _pedidoService.GetPedidoById(pedidoId));
         }
 
         public IActionResult Resumo()

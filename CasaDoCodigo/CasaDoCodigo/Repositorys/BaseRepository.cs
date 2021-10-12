@@ -1,12 +1,9 @@
 ﻿using CasaDoCodigo.Models.Entities;
-using Microsoft.EntityFrameworkCore;
+using CasaDoCodigo.Models.Exceptions;
+using CasaDoCodigo.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using CasaDoCodigo.Models.Responses;
-using CasaDoCodigo.Models.Entities;
-using CasaDoCodigo.Models.Exceptions;
 
 namespace CasaDoCodigo.Repositorys
 {
@@ -69,17 +66,17 @@ namespace CasaDoCodigo.Repositorys
                 return new RepositoryGetInstanceByID<T>(false, "Falha ao capturar instância", null);
             }
         }
-        public RepositorySetInstanceByID<T> InsertNewInstance(T instance)
+        public RepositorySetInstance<T> InsertNewInstance(T instance)
         {
             try
             {
                 _dbContext.Set<T>().Add(instance);
                 _dbContext.SaveChanges();
-                return new RepositorySetInstanceByID<T>(true, "Nova instância inserida com sucesso", instance);
+                return new RepositorySetInstance<T>(true, "Nova instância inserida com sucesso", instance);
             }
             catch
             {
-                return new RepositorySetInstanceByID<T>(false, "Falha ao inserir a nova instância", null);
+                return new RepositorySetInstance<T>(false, "Falha ao inserir a nova instância", null);
             }
 
         }

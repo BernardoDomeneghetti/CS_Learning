@@ -13,9 +13,19 @@ namespace HolidaysFeederService
             var responses = feeder.UpdateHolidays(DateTime.Now.Year);
             foreach ( HolidayAppendResponse response in responses)
             {
-                Console.WriteLine(
-                    $"{response.Message}: {response.Holiday.Day}/{response.Holiday.Month}/{response.Holiday.Year} - {response.Holiday.Description}"
-                );
+                try
+                {
+                    Console.WriteLine(
+                        $"{response.Message}: {response.Holiday.Day}/{response.Holiday.Month}/{response.Holiday.Year} - {response.Holiday.Description}"
+                    );
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(
+                        $"ERRO ao inserir feriado: {e.Message}"
+                    );
+                }
+                
             }
         }
     }

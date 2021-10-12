@@ -8,8 +8,8 @@ namespace CasaDoCodigo.Models.Responses
 {
     public class ProductListResponse:BaseResponse
     {
-        public List<Produto> Products { get; private set; }
-        public ProductListResponse(bool success, string message, List<Produto> products) : base(success, message)
+        public List<Product> Products { get; private set; }
+        public ProductListResponse(bool success, string message, List<Product> products) : base(success, message)
         {
             Products = products;
         }
