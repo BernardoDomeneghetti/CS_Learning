@@ -128,7 +128,7 @@ using CasaDoCodigo.Models;
                     ");
             EndContext();
             BeginContext(2088, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "43f55e1758e54edaaf9e2f5b0f3a193e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dfdf1e123e6049e3aced23c4471c5cbd", async() => {
                 BeginContext(2114, 20, true);
                 WriteLiteral("[Selecione o estado]");
                 EndContext();
@@ -153,7 +153,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2165, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1220356b3ddf4b3f9b1dc923939ca8cd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "925eddc249e74e5aad85af553079f8d0", async() => {
                 BeginContext(2184, 4, true);
                 WriteLiteral("Acre");
                 EndContext();
@@ -175,7 +175,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2219, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "242c0ef20e2f4af9bf9a9c772a906dae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b70545ac2d054309a40f1ca35c978e4f", async() => {
                 BeginContext(2238, 7, true);
                 WriteLiteral("Alagoas");
                 EndContext();
@@ -197,7 +197,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2276, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d2b44aa416345b58f1140aa9edf8461", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d92261a57384621b0ea8ad75ea1defd", async() => {
                 BeginContext(2295, 5, true);
                 WriteLiteral("Amapá");
                 EndContext();
@@ -219,7 +219,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2331, 36, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23749d615624499b835043cc384fec46", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb1234e13dd141aa961f28b9a725fd9c", async() => {
                 BeginContext(2350, 8, true);
                 WriteLiteral("Amazonas");
                 EndContext();
@@ -241,7 +241,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2389, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5454b3d0a6fc4056b6b3d8f44a84e69e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "76ae415cb6dc42959edde56f2896d79e", async() => {
                 BeginContext(2408, 5, true);
                 WriteLiteral("Bahia");
                 EndContext();
@@ -263,7 +263,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2444, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caec926153114854970d656fd7191739", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12a76009710a4d3dbf38acc91cb1ddb6", async() => {
                 BeginContext(2463, 5, true);
                 WriteLiteral("Ceará");
                 EndContext();
@@ -285,7 +285,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2499, 44, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fbc9cbdd54474a7597acc10f703d6c7f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b1f93db098b4ab297eddb5ed50573e2", async() => {
                 BeginContext(2518, 16, true);
                 WriteLiteral("Distrito Federal");
                 EndContext();
@@ -307,7 +307,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2565, 42, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25261eb18b5042149f3d4563dd6cb427", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e57f6410a33a4862b5e381f417568113", async() => {
                 BeginContext(2584, 14, true);
                 WriteLiteral("Espírito Santo");
                 EndContext();
@@ -329,7 +329,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2629, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb4933e599764bae8f80442afcefabb9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78644a4cc2ac4505baa56fe13a8277d2", async() => {
                 BeginContext(2648, 5, true);
                 WriteLiteral("Goiás");
                 EndContext();
@@ -351,7 +351,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2684, 36, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aadc86e45d614c00a8e6c4856e762d50", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbd2e0905b7f424cae3fb28c8d434562", async() => {
                 BeginContext(2703, 8, true);
                 WriteLiteral("Maranhão");
                 EndContext();
@@ -373,7 +373,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2742, 39, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54132eae7a854aab9bb8fab94c242fea", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1a40d4810417454589266f85687b2699", async() => {
                 BeginContext(2761, 11, true);
                 WriteLiteral("Mato Grosso");
                 EndContext();
@@ -395,7 +395,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2803, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f27d1f33f2242cfb5360d092d1a11dc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "319328c83f624bba883305cda6e25b93", async() => {
                 BeginContext(2822, 18, true);
                 WriteLiteral("Mato Grosso do Sul");
                 EndContext();
@@ -417,7 +417,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2871, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b54d6759fbdc4d9eaa16a7f5dd61303c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dcdebb4df0f54d6e8c6941630bad053f", async() => {
                 BeginContext(2890, 12, true);
                 WriteLiteral("Minas Gerais");
                 EndContext();
@@ -439,7 +439,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2933, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "364711e7d99048a2a45989983ed2a540", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "911780bb7e1945b39ab745713bf08de7", async() => {
                 BeginContext(2952, 4, true);
                 WriteLiteral("Pará");
                 EndContext();
@@ -461,7 +461,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2987, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70cf14b4399e4ff6aa87c63d5beaa3c5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "34b123da7e67475fb1cfe9c1bfdb75eb", async() => {
                 BeginContext(3006, 7, true);
                 WriteLiteral("Paraíba");
                 EndContext();
@@ -483,7 +483,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3044, 34, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0654a2e501264ec795d5b7560194e72a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "526b630c043f41fabbc001650f61aeac", async() => {
                 BeginContext(3063, 6, true);
                 WriteLiteral("Paraná");
                 EndContext();
@@ -505,7 +505,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3100, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1b4be54efb04b5dbd3353f8767a67e2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f20d58bd4b2d4a699a006c2f23b4cef5", async() => {
                 BeginContext(3119, 10, true);
                 WriteLiteral("Pernambuco");
                 EndContext();
@@ -527,7 +527,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3160, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7ac39e529404a52b4bd126b1bb8b60b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e61ceb456e684c25b0e0aa4338f450bb", async() => {
                 BeginContext(3179, 5, true);
                 WriteLiteral("Piauí");
                 EndContext();
@@ -549,7 +549,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3215, 42, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0447b8e5c661434ca220ac37a5549f3e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35fb0d22575141b7be67c1846e88fc88", async() => {
                 BeginContext(3234, 14, true);
                 WriteLiteral("Rio de Janeiro");
                 EndContext();
@@ -571,7 +571,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3279, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb9d6cc1901e40c7930fc9b141c645cd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b62e0e41a108483d8ceac40ea0c2227b", async() => {
                 BeginContext(3298, 19, true);
                 WriteLiteral("Rio Grande do Norte");
                 EndContext();
@@ -593,7 +593,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3348, 45, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2307d88a9ce74236820cf731cf773c42", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68c733c9854b4ecdbd45e8cc77924847", async() => {
                 BeginContext(3367, 17, true);
                 WriteLiteral("Rio Grande do Sul");
                 EndContext();
@@ -615,7 +615,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3415, 36, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62bdfdb47aca4bea979c0eb4cec5c77c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f364f174e432469ea63b5bac7fee2561", async() => {
                 BeginContext(3434, 8, true);
                 WriteLiteral("Rondônia");
                 EndContext();
@@ -637,7 +637,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3473, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "728d00703e22437f917dd84027775b2b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b196412a74f4a4b8dd4c0e7310007a6", async() => {
                 BeginContext(3492, 7, true);
                 WriteLiteral("Roraima");
                 EndContext();
@@ -659,7 +659,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3530, 42, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "24c96b2ad60c40b5b4560eb9605aa184", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3869e8e1e9ba4c03ad51def12d19bd74", async() => {
                 BeginContext(3549, 14, true);
                 WriteLiteral("Santa Catarina");
                 EndContext();
@@ -681,7 +681,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3594, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b9ae795ada24386b0c765320f8a790e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4a5af1b4d17448b8e9d4d84241ce246", async() => {
                 BeginContext(3613, 9, true);
                 WriteLiteral("São Paulo");
                 EndContext();
@@ -703,7 +703,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3653, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6169afbf307140698b16d3d99a710450", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e6ce643f32e4c5dae948adfa1abd629", async() => {
                 BeginContext(3672, 7, true);
                 WriteLiteral("Sergipe");
                 EndContext();
@@ -725,7 +725,7 @@ using CasaDoCodigo.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(3710, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f18cdcb080ed4e7bbee311a580fc93bc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "55a2fc78144f4837bdd5d5b70660af88", async() => {
                 BeginContext(3729, 9, true);
                 WriteLiteral("Tocantins");
                 EndContext();

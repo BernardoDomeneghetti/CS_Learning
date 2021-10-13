@@ -12,6 +12,6 @@ namespace CasaDoCodigo.Services
 {
     public interface IProductService
     {
-        RepositoryListResponse<Product> ListProducts();
+        RepositoryListResponse<Produto> ListProducts();
     }
 }

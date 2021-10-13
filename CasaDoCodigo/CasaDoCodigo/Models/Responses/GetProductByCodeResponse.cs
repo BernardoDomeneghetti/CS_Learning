@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models.Responses
 {
-    public class RepositoryGetInstanceByID<T> : BaseResponse where T: BaseModel
+    public class GetProductByCodeResponse : BaseResponse
     {
-        public T Instance { get; private set; }
-        public RepositoryGetInstanceByID(bool success, string message, T instance) : base(success, message)
+        public Produto Instance { get; }
+        public GetProductByCodeResponse(bool success, string message, Produto instance) : base(success, message)
         {
             Instance = instance;
         }

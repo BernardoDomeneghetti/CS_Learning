@@ -19,10 +19,12 @@ namespace CasaDoCodigo.Services
         private readonly IProductRepository _productRepository;
         private readonly IHttpContextAccessor _accessor;
 
-        public PedidoService(IPedidoRepository repository, IHttpContextAccessor accessor)
+        public PedidoService(IPedidoRepository pedidoRepository, IHttpContextAccessor accessor, IItemPedidoRepository itemPedidoRepository, IProductRepository productRepository)
         {
-            _pedidoRepository = repository;
+            _pedidoRepository = pedidoRepository;
             _accessor = accessor;
+            _itemPedidoRepository = itemPedidoRepository;
+            _productRepository = productRepository;
         }
 
         public RepositoryImportResponse<Pedido> PedidoJsonImport(string jsonString)
@@ -77,11 +79,11 @@ namespace CasaDoCodigo.Services
             }
         }
 
-        public AddProductToCartResponse AddProductToPedido(int pedidoId, int productId)
+        public AddProductToCartResponse AddProductToPedido(int pedidoId, int productCode)
         {
             try
             {
-                var item = _itemPedidoRepository.GetItemByPedidoAndProduct(pedidoId, productId).Item;
+                var item = _itemPedidoRepository.GetItemByPedidoAndProduct(pedidoId, productCode).Item;
                 var pedido = _pedidoRepository.GetInstanceById(pedidoId).Instance;
 
                 if (item != null)
@@ -90,7 +92,8 @@ namespace CasaDoCodigo.Services
                 }
                 else
                 {
-                    var product = _productRepository.GetInstanceById(productId).Instance;
+                    GetProductByCodeResponse teste = _productRepository.GetProductByCode(productCode);
+                    var product = teste.Instance;
                     item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, 1, product.Preco)).Instance;
                 }
                 return new

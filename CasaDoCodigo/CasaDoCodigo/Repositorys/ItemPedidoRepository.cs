@@ -20,7 +20,7 @@ namespace CasaDoCodigo.Repositorys
             {
                 ItemPedido instance =
                     _dbContext.Set<ItemPedido>()
-                        .Where(p => p.Pedido.Id == pedidoId || p.Produto.Id == productId)
+                        .Where(p => p.Pedido.Id == pedidoId && p.Produto.Id == productId)
                         .SingleOrDefault();
                 
                 return new GetItemByPedidoAndProductResponse(true, "Item found successfully", instance);

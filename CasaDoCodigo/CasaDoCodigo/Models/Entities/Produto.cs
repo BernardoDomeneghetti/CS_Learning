@@ -2,9 +2,9 @@
 
 namespace CasaDoCodigo.Models.Entities
 {
-    public class Product : BaseModel
+    public class Produto : BaseModel
     {
-        public Product()
+        public Produto()
         {
 
         }
@@ -16,7 +16,7 @@ namespace CasaDoCodigo.Models.Entities
         [Required]
         public decimal Preco { get; set; }
 
-        public Product(int codigo, string nome, decimal preco)
+        public Produto(int codigo, string nome, decimal preco)
         {
             this.Codigo = codigo;
             this.Nome = nome;

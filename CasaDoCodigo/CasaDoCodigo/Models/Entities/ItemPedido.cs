@@ -7,7 +7,7 @@ namespace CasaDoCodigo.Models.Entities
         [Required]
         public Pedido Pedido { get; set; }
         [Required]
-        public Product Produto { get; set; }
+        public Produto Produto { get; set; }
         [Required]
         public int Quantidade { get; set; }
         [Required]
@@ -18,7 +18,7 @@ namespace CasaDoCodigo.Models.Entities
 
         }
 
-        public ItemPedido(Pedido pedido, Product produto, int quantidade, decimal precoUnitario)
+        public ItemPedido(Pedido pedido, Produto produto, int quantidade, decimal precoUnitario)
         {
             Pedido = pedido;
             Produto = produto;

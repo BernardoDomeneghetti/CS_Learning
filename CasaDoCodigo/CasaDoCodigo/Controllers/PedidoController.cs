@@ -29,7 +29,7 @@ namespace CasaDoCodigo.Controllers
 
             AddProductToCartResponse response = _pedidoService.AddProductToPedido(pedidoId, productCode);
             
-            return View("Carrinho", _pedidoService.GetPedidoById(pedidoId));
+            return View("Carrinho", _pedidoService.GetPedidoById(pedidoId).Instance);
         }
 
         public IActionResult Resumo()
