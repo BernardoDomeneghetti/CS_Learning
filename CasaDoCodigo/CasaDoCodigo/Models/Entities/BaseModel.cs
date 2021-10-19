@@ -1,11 +1,10 @@
-using System;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Threading.Tasks;
-
-namespace CasaDoCodigo.Models.Entities { 
-    public class BaseModel
+namespace CasaDoCodigo.Models.Entities
+{
+    public abstract class BaseModel
     {
+        
         public int Id { get; set; }
+
+        public abstract void SetKey();
     }
 }

@@ -22,9 +22,15 @@ namespace CasaDoCodigo.Repositorys
             {
                 foreach (var item in items)
                 {
-                    _dbContext.Set<T>().Add(item);
+                    item.SetKey();
+
+                    if (!_dbContext.Set<T>().Where(p => p.Id == item.Id).Any())
+                    {
+                        item.Id = 0;
+                        _dbContext.Set<T>().Add(item);
+                        _dbContext.SaveChanges();
+                    }
                 }
-                _dbContext.SaveChanges();
 
                 return new RepositoryImportResponse<T>(true, "Produtos inseridos no banco de dados com sucesso!", items);
             }

@@ -4,11 +4,6 @@ namespace CasaDoCodigo.Models.Entities
 {
     public class Produto : BaseModel
     {
-        public Produto()
-        {
-
-        }
-
         [Required]
         public int Codigo { get; set; }
         [Required]
@@ -16,11 +11,21 @@ namespace CasaDoCodigo.Models.Entities
         [Required]
         public decimal Preco { get; set; }
 
+        public Produto()
+        {
+            
+        }
+
         public Produto(int codigo, string nome, decimal preco)
         {
             this.Codigo = codigo;
             this.Nome = nome;
             this.Preco = preco;
+        }
+
+        public override void SetKey()
+        {
+            Id = Codigo;
         }
     }
 }

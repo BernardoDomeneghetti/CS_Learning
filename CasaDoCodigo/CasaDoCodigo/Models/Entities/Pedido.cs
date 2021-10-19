@@ -18,5 +18,10 @@ namespace CasaDoCodigo.Models.Entities
         public List<ItemPedido> Itens { get;  set; } = new List<ItemPedido>();
         [Required]
         public virtual Cadastro Cadastro { get;  set; }
+
+        public override void SetKey()
+        {
+
+        }
     }
 }

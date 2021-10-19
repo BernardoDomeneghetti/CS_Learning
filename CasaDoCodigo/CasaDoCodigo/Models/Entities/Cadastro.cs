@@ -27,5 +27,10 @@ namespace CasaDoCodigo.Models.Entities
         public string UF { get; set; } = "";
         [Required]
         public string CEP { get; set; } = "";
+
+        public override void SetKey()
+        {
+            
+        }
     }
 }

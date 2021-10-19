@@ -14,13 +14,13 @@ namespace CasaDoCodigo.Repositorys
         {
         }
 
-        public GetItemByPedidoAndProductResponse GetItemByPedidoAndProduct(int pedidoId, int productId)
+        public GetItemByPedidoAndProductResponse GetItemByPedidoAndProduct(int pedidoId, int productCode)
         {
             try
             {
                 ItemPedido instance =
                     _dbContext.Set<ItemPedido>()
-                        .Where(p => p.Pedido.Id == pedidoId && p.Produto.Id == productId)
+                        .Where(p => p.Pedido.Id == pedidoId && p.Produto.Id == productCode)
                         .SingleOrDefault();
                 
                 return new GetItemByPedidoAndProductResponse(true, "Item found successfully", instance);

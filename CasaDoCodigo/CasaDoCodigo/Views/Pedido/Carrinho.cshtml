@@ -33,7 +33,7 @@
                         <img class="img-produto-carrinho" src="/images/produtos/large_@(item.Produto.Codigo.ToString("D3")).jpg" />
                     </div>
                     <div class="col-md-3">@(item.Produto.Nome)</div>
-                    <div class="col-md-2 text-center">R$ @(item.Produto.Nome)</div>
+                    <div class="col-md-2 text-center">R$ @(item.Produto.Preco)</div>
                     <div class="col-md-2 text-center">
                         <div class="input-group">
                             <span class="input-group-btn">
@@ -41,7 +41,7 @@
                                     <span class="glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input type="text" value="2"
+                            <input type="text" value="@(item.Quantidade)"
                                    class="form-control text-center" />
                             <span class="input-group-btn">
                                 <button class="btn btn-default">

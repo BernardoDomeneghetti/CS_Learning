@@ -24,12 +24,6 @@ namespace CasaDoCodigo.Services
         {
             try
             {
-
-                if (!context.Database.EnsureCreated())
-                {
-                    throw new DatabaseAlreadyCreatedException("Database already created");
-                }
-
                 context.Database.Migrate();
 
                 var jsonString = File.ReadAllText("livros.json");
@@ -37,7 +31,7 @@ namespace CasaDoCodigo.Services
 
             }
 
-            catch (DatabaseAlreadyCreatedException) { }
+            catch (System.Data.SqlClient.SqlException) { }
         }
         
 

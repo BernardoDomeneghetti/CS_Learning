@@ -25,5 +25,10 @@ namespace CasaDoCodigo.Models.Entities
             Quantidade = quantidade;
             PrecoUnitario = precoUnitario;
         }
+
+        public override void SetKey()
+        {
+            
+        }
     }
 }

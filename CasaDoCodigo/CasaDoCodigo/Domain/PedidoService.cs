@@ -52,14 +52,7 @@ namespace CasaDoCodigo.Services
 
         public RepositoryGetInstanceByID<Pedido> GetPedidoById(int IdPedido)
         {
-            try
-            {
-                return _pedidoRepository.GetInstanceById(IdPedido);
-            }
-            catch (DbObjectInstanceNotFoundException e)
-            {
-                return new RepositoryGetInstanceByID<Pedido>(false, $"ERRO: Falha ao buscar o pedido: {e.Message}", null);
-            }
+                return _pedidoRepository.GetPedidoById(IdPedido);
         }
 
         public RepositorySetInstance<Pedido> GetNewPedidoInstance()
@@ -83,7 +76,9 @@ namespace CasaDoCodigo.Services
         {
             try
             {
-                var item = _itemPedidoRepository.GetItemByPedidoAndProduct(pedidoId, productCode).Item;
+                var product = _productRepository.GetProductByCode(productCode).Instance;
+                var item = _itemPedidoRepository.GetItemByPedidoAndProduct(pedidoId, product.Id).Item;
+
                 var pedido = _pedidoRepository.GetInstanceById(pedidoId).Instance;
 
                 if (item != null)
@@ -92,8 +87,7 @@ namespace CasaDoCodigo.Services
                 }
                 else
                 {
-                    GetProductByCodeResponse teste = _productRepository.GetProductByCode(productCode);
-                    var product = teste.Instance;
+                    
                     item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, 1, product.Preco)).Instance;
                 }
                 return new
