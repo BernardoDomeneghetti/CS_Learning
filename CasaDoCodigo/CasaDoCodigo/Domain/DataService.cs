@@ -24,11 +24,11 @@ namespace CasaDoCodigo.Services
         {
             try
             {
-                context.Database.Migrate();
-
-                var jsonString = File.ReadAllText("livros.json");
-                new ProductService(new Repositorys.ProductRepository(context)).ProductJsonImport(jsonString);
-
+                if(context.Database.EnsureCreated())
+                {
+                    var jsonString = File.ReadAllText("livros.json");
+                    new ProductService(new Repositorys.ProductRepository(context)).ProductJsonImport(jsonString);
+                }
             }
 
             catch (System.Data.SqlClient.SqlException) { }
