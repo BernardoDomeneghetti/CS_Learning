@@ -44,9 +44,13 @@
                             <input type="text" value="@(item.Quantidade)"
                                    class="form-control text-center" />
                             <span class="input-group-btn">
-                                <button class="btn btn-default">
-                                    <span class="glyphicon-plus"></span>
-                                </button>
+                                <form method="post" action="pedido/AddProductToCart">
+                                    <input />
+                                    <button class="btn btn-default" type="submit">
+                                        <span class="glyphicon-plus"></span>
+                                    </button>
+                                </form>
+                                
                             </span>
                         </div>
                     </div>
@@ -58,7 +62,6 @@
                 </div>
             }
         }
-
 
     </div>
     <div class="panel-footer">
@@ -83,8 +86,8 @@
             <a class="btn btn-success" asp-controller="Product" asp-action="Carrossel">
                 Adicionar Produtos
             </a>
-            <a class="btn btn-success" asp-action="Cadastro">
-                Preencher Cadastro
+            <a class="btn btn-success" asp-action="Resumo">
+                Finalizar pedido
             </a>
         </div>
     </div>
