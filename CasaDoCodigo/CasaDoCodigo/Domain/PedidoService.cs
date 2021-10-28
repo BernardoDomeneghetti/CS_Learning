@@ -82,14 +82,10 @@ namespace CasaDoCodigo.Services
                 var pedido = _pedidoRepository.GetInstanceById(pedidoId).Instance;
 
                 if (item != null)
-                {
                     _itemPedidoRepository.IncreaseAmount(item);
-                }
                 else
-                {
-                    
                     item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, 1, product.Preco)).Instance;
-                }
+
                 return new
                     AddProductToCartResponse(
                         true,
