@@ -43,26 +43,21 @@
                             </span>
                             <input type="text" value="@(item.Quantidade)"
                                    class="form-control text-center" />
-                            <span class="input-group-btn">
-                                <form method="post" action="pedido/AddProductToCart">
-                                    <input />
-                                    <button class="btn btn-default" type="submit">
-                                        <span class="glyphicon-plus"></span>
-                                    </button>
-                                </form>
-                                
+                            <span class="input-group-btn">    
+                                <button onclick="AddProductToCart(@item.Produto.Codigo)" class="btn btn-default" >
+                                    <span class="glyphicon-plus"></span>
+                                </button>
                             </span>
                         </div>
                     </div>
                     <div class="col-md-2">
                         R$ <span class="pull-right" subtotal>
                             @(item.Produto.Preco * item.Quantidade)
-                        </span>
+                        </span> 
                     </div>
                 </div>
             }
         }
-
     </div>
     <div class="panel-footer">
         <div class="row">
@@ -92,3 +87,22 @@
         </div>
     </div>
 </div>
+
+@section Scripts{ 
+    <script>
+        function AddProductToCart(productCode) {
+            console.log(productCode);
+            $.ajax({
+                url: '/Pedido/AddProductToCart',
+                type: 'POST',
+                dataType: 'json',
+                async: false,
+                data: {
+                    request: {
+                        productCode: productCode
+                    }
+                }
+            });
+        }
+    </script>
+}

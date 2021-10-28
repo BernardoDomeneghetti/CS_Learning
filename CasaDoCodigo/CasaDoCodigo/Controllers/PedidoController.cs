@@ -21,17 +21,16 @@ namespace CasaDoCodigo.Controllers
         public IActionResult Cart()
         {
             var pedidoId = _pedidoService.GetIdPedidoFromSession();
-            return View(_pedidoService.GetPedidoById(pedidoId));
+            return View("Carrinho", _pedidoService.GetPedidoById(pedidoId).Instance);
         }
 
         [HttpPost]
-        public IActionResult AddProductToCart([FromForm]AddProductToCartRequest request)
+        public JsonResult AddProductToCart(AddProductToCartRequest request)
         {
             var pedidoId = _pedidoService.GetIdPedidoFromSession();
-
-            AddProductToCartResponse response = _pedidoService.AddProductToPedido(pedidoId, request.ProductCode);
+            var response = _pedidoService.AddProductToPedido(pedidoId, request.ProductCode);
             
-            return View("Carrinho", _pedidoService.GetPedidoById(pedidoId).Instance);
+            return Json(response);
         }
 
         public IActionResult Resumo()
