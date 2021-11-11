@@ -22,7 +22,7 @@ namespace CasaDoCodigo.Repositorys
                     _dbContext.Set<ItemPedido>()
                         .Where(p => p.Pedido.Id == pedidoId && p.Produto.Id == productCode)
                         .SingleOrDefault();
-                
+
                 return new GetItemByPedidoAndProductResponse(true, "Item found successfully", instance);
             }
             catch (Exception e)
@@ -37,14 +37,20 @@ namespace CasaDoCodigo.Repositorys
                     );
             }
         }
-
-        public IncreaseAmountItemResponse IncreaseAmount(ItemPedido item)
+        /// <summary>
+        /// Increment the item count with the amount parameter
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="amount"> This parameter is added to the original item's amount, it doesn't replaces it</param>
+        /// <returns></returns>
+        public IncreaseAmountItemResponse IncreaseAmount(ItemPedido item, int amount)
         {
-
-            item.Quantidade++;
+            item.Quantidade += amount;
             try
             {
                 ItemPedido instance = _dbContext.Set<ItemPedido>().Update(item).Entity;
+                _dbContext.SaveChanges();
+
                 return new IncreaseAmountItemResponse(true, "Item found successfully", instance);
             }
             catch (Exception e)
@@ -58,6 +64,18 @@ namespace CasaDoCodigo.Repositorys
                         null
                     );
             }
+        }
+
+        /// <summary>
+        /// Increment in one the item count
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public IncreaseAmountItemResponse IncreaseOne(ItemPedido item)
+        {
+            item.Quantidade = item.Quantidade - item.Quantidade + 1;
+
+            return IncreaseAmount(item, item.Quantidade);
         }
     }
 }

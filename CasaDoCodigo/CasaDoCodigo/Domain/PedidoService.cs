@@ -9,6 +9,7 @@ using CasaDoCodigo.Models.Responses;
 using CasaDoCodigo.Models.Entities;
 using CasaDoCodigo.Models.Exceptions;
 using Microsoft.AspNetCore.Http;
+using CasaDoCodigo.Models.Requests;
 
 namespace CasaDoCodigo.Services
 {
@@ -72,19 +73,28 @@ namespace CasaDoCodigo.Services
             }
         }
 
-        public AddProductToCartResponse AddProductToPedido(int pedidoId, int productCode)
+        public AddProductToCartResponse AddProductToPedido(AddProductToCartRequest request)
         {
             try
             {
-                var product = _productRepository.GetProductByCode(productCode).Instance;
-                var item = _itemPedidoRepository.GetItemByPedidoAndProduct(pedidoId, product.Id).Item;
+                var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
+                var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
 
-                var pedido = _pedidoRepository.GetInstanceById(pedidoId).Instance;
+                var pedido = _pedidoRepository.GetInstanceById(request.PedidoId).Instance;
 
                 if (item != null)
-                    _itemPedidoRepository.IncreaseAmount(item);
+                {
+                    var diferenceAmount = item.Quantidade - request.Amount;
+                    // The method IncreaseAmount, sum the original item's amount plus the amount parameter.
+                    //Then it needs to get the difference between the total amount and the amount
+                    if (request.Amount == 1)
+                        _itemPedidoRepository.IncreaseOne(item);
+                    else
+                        _itemPedidoRepository.IncreaseAmount(item, diferenceAmount);
+
+                }
                 else
-                    item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, 1, product.Preco)).Instance;
+                    item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, request.Amount, product.Preco)).Instance;
 
                 return new
                     AddProductToCartResponse(

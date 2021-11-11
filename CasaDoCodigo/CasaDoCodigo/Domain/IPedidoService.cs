@@ -1,4 +1,5 @@
 ﻿using CasaDoCodigo.Models.Entities;
+using CasaDoCodigo.Models.Requests;
 using CasaDoCodigo.Models.Responses;
 
 namespace CasaDoCodigo.Services
@@ -11,6 +12,6 @@ namespace CasaDoCodigo.Services
         RepositoryListResponse<Pedido> ListProducts();
         RepositoryImportResponse<Pedido> PedidoJsonImport(string jsonString);
         int RegisterPedidoInSession(Pedido pedido);
-        AddProductToCartResponse AddProductToPedido(int PedidoId, int productCode);
+        AddProductToCartResponse AddProductToPedido(AddProductToCartRequest request);
     }
 }

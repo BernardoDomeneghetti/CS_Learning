@@ -27,8 +27,8 @@ namespace CasaDoCodigo.Controllers
         [HttpPost]
         public JsonResult AddProductToCart(AddProductToCartRequest request)
         {
-            var pedidoId = _pedidoService.GetIdPedidoFromSession();
-            var response = _pedidoService.AddProductToPedido(pedidoId, request.ProductCode);
+            request.PedidoId = _pedidoService.GetIdPedidoFromSession();
+            var response = _pedidoService.AddProductToPedido(request);
             
             return Json(response);
         }
