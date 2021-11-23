@@ -37,14 +37,14 @@
                     <div class="col-md-2 text-center">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button onclick="MinusButtonAction(@item.Produto.Codigo)" class="btn btn-default">
+                                <button onclick="carrinho.decrementAmount(@item.Produto.Codigo)" class="btn btn-default">
                                     <span class="glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input id="@item.Produto.Codigo" type="text" onchange="SetItemAmount(@(item.Produto.Codigo), this)"  value="@(item.Quantidade)"
+                            <input id="@item.Produto.Codigo" type="text" onchange="carrinho.SetAmount(@(item.Produto.Codigo), this)"  value="@(item.Quantidade)"
                                    class="form-control text-center" />
                             <span class="input-group-btn">    
-                                <button onclick="PlusButtonAction(@item.Produto.Codigo)" class="btn btn-default" >
+                                <button onclick="carrinho.IncrementAmount(@item.Produto.Codigo)" class="btn btn-default" >
                                     <span class="glyphicon-plus"></span>
                                 </button>
                             </span>
@@ -88,66 +88,6 @@
     </div>
 </div>
 
-@section Scripts{ 
-    <script>
-        function PlusButtonAction(productCode) {
-
-            var elValue = document.getElementById(productCode).value;
-            document.getElementById(productCode).value  = Number(elValue) + 1;
-            
-            $.ajax({
-                url: '/Pedido/AddProductToCart',
-                type: 'POST',
-                dataType: 'json',
-                async: false,
-                data: {
-                    request: {
-                        productCode: productCode,
-                        amount: 1
-                    }
-                },
-                success: function () {
-                    var elValue = document.getElementById(productCode).value;
-                    document.getElementById(productCode).value = Number(elValue) + 1;
-                }
-            });
-        }
-
-        function MinusButtonAction(productCode) {
-            $.ajax({
-                url: '/Pedido/AddProductToCart',
-                type: 'POST',
-                dataType: 'json',
-                async: false,
-                data: {
-                    request: {
-                        productCode: productCode,
-                        amount: -1
-                    }
-                },
-                success: function () {
-                    var elValue = document.getElementById(productCode).value;
-                    document.getElementById(productCode).value = Number(elValue) - 1;
-                }
-            });
-        }
-
-        function SetItemAmount(productCode, element) {
-
-            var amount = element.value;
-
-            $.ajax({
-                url: '/Pedido/PlusButtonAction',
-                type: 'POST',
-                dataType: 'json',
-                async: false,
-                data: {
-                    request: {
-                        productCode: productCode,
-                        amount: amount
-                    }
-                }
-            });
-        }
-    </script>
+@section ImportScripts{ 
+    <script src="~/js/CarrinhoScript.js"></script>
 }

@@ -79,7 +79,6 @@ namespace CasaDoCodigo.Services
             {
                 var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
                 var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
-
                 var pedido = _pedidoRepository.GetInstanceById(request.PedidoId).Instance;
 
                 if (item != null)

@@ -32,6 +32,15 @@ namespace CasaDoCodigo.Controllers
             
             return Json(response);
         }
+        
+        [HttpPost]
+        public JsonResult RemoveProductToCart(AddProductToCartRequest request)
+        {
+            request.PedidoId = _pedidoService.GetIdPedidoFromSession();
+            var response = _pedidoService.RemoveProductFromCart(request);
+
+            return Json(response);
+        }
 
         public IActionResult Resumo()
         {
