@@ -43,7 +43,7 @@ namespace CasaDoCodigo.Repositorys
         /// <param name="item"></param>
         /// <param name="amount"> This parameter is added to the original item's amount, it doesn't replaces it</param>
         /// <returns></returns>
-        public IncreaseAmountItemResponse IncreaseAmount(ItemPedido item, int amount)
+        public IncreaseAmountItemResponse UpdateAmount(ItemPedido item, int amount)
         {
             item.Quantidade += amount;
             try
@@ -64,18 +64,6 @@ namespace CasaDoCodigo.Repositorys
                         null
                     );
             }
-        }
-
-        /// <summary>
-        /// Increment in one the item count
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public IncreaseAmountItemResponse IncreaseOne(ItemPedido item)
-        {
-            item.Quantidade = item.Quantidade - item.Quantidade + 1;
-
-            return IncreaseAmount(item, item.Quantidade);
         }
     }
 }

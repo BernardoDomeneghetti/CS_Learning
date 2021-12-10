@@ -12,6 +12,8 @@ namespace CasaDoCodigo.Services
         RepositoryListResponse<Pedido> ListProducts();
         RepositoryImportResponse<Pedido> PedidoJsonImport(string jsonString);
         int RegisterPedidoInSession(Pedido pedido);
-        AddProductToCartResponse AddProductToPedido(AddProductToCartRequest request);
+        UpdateProductAmountResponse UpdateProductAmount(UpdateProductAmountRequest request);
+        UpdateProductAmountResponse IncreaseProductAmount(UpdateProductAmountRequest request);
+        UpdateProductAmountResponse DecreaseProductAmount(UpdateProductAmountRequest request);
     }
 }

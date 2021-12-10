@@ -86,5 +86,27 @@ namespace CasaDoCodigo.Repositorys
             }
 
         }
+
+        public RepositoryUpdateResponse<T> UpdateEntity(T entity)
+        {
+            try
+            {
+                T instance = _dbContext.Set<T>().Update(entity).Entity;
+                _dbContext.SaveChanges();
+
+                return new RepositoryUpdateResponse<T>(true, "Entity updated successfully", entity);
+            }
+            catch (Exception e)
+            {
+                return new
+                    RepositoryUpdateResponse<T>(
+                        false,
+                        $"ERROR: Failed while trying to search for ItemPedido" +
+                            $"EXCEPTION TYPE: {e.GetType()}" +
+                            $"EXCEPTION MESSAGE: {e.Message}",
+                        null
+                    );
+            }
+        }
     }
 }

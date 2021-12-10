@@ -1,41 +1,37 @@
 class Carrinho
 {
+
+
     IncrementAmount(productCode) {
 
         var elValue = document.getElementById(productCode).value;
-        document.getElementById(productCode).value = Number(elValue) + 1;
+        document.getElementById(productCode).value = Number(elValue)+1;
 
         $.ajax({
-            url: '/Pedido/AddProductToCart',
+            url: '/Pedido/IncreaseProductAmount',
             type: 'POST',
             dataType: 'json',
-            async: false,
+            async: true,
             data: {
                 request: {
-                    productCode: productCode,
-                    amount: 1
+                    productCode: productCode
                 }
-            },
-            success: function () {
-                var elValue = document.getElementById(productCode).value;
-                document.getElementById(productCode).value = Number(elValue) + 1;
             }
         });
     }
 
-    decrementAmount(productCode) {
+    DecrementAmount(productCode) {
         $.ajax({
-            url: '/Pedido/AddProductToCart',
+            url: '/Pedido/DecreaseProductAmount',
             type: 'POST',
             dataType: 'json',
-            async: false,
+            async: true,
             data: {
                 request: {
-                    productCode: productCode,
-                    amount: -1
+                    productCode: productCode
                 }
             },
-            success: function () {
+            success: function (data) {
                 var elValue = document.getElementById(productCode).value;
                 document.getElementById(productCode).value = Number(elValue) - 1;
             }
@@ -47,10 +43,10 @@ class Carrinho
         var amount = element.value;
 
         $.ajax({
-            url: '/Pedido/PlusButtonAction',
+            url: '/Pedido/UpdateProductAmount',
             type: 'POST',
             dataType: 'json',
-            async: false,
+            async: true,
             data: {
                 request: {
                     productCode: productCode,

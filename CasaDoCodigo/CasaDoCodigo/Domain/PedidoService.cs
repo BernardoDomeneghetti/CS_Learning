@@ -41,8 +41,11 @@ namespace CasaDoCodigo.Services
 
         public int GetIdPedidoFromSession()
         {
-            return _accessor.HttpContext.Session.GetInt32("PedidoId")??
-                        RegisterPedidoInSession(GetNewPedidoInstance().Instance);
+            var teste = _accessor.HttpContext.Session.GetInt32("PedidoId");
+            if ( teste != null)
+                return teste.Value;
+            else
+                return RegisterPedidoInSession(GetNewPedidoInstance().Instance);
         }
 
         public int RegisterPedidoInSession(Pedido pedido)
@@ -73,7 +76,28 @@ namespace CasaDoCodigo.Services
             }
         }
 
-        public AddProductToCartResponse AddProductToPedido(AddProductToCartRequest request)
+        public UpdateProductAmountResponse IncreaseProductAmount(UpdateProductAmountRequest request)
+        {
+            var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
+            var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
+
+            request.Amount = item.Quantidade--;
+
+            return UpdateProductAmount(request);
+
+        }
+        public UpdateProductAmountResponse DecreaseProductAmount(UpdateProductAmountRequest request)
+        {
+            var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
+            var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
+
+            request.Amount = item.Quantidade--;
+
+            return UpdateProductAmount(request);
+        }
+        
+
+        public UpdateProductAmountResponse UpdateProductAmount(UpdateProductAmountRequest request)
         {
             try
             {
@@ -83,22 +107,17 @@ namespace CasaDoCodigo.Services
 
                 if (item != null)
                 {
-                    var diferenceAmount = item.Quantidade - request.Amount;
-                    // The method IncreaseAmount, sum the original item's amount plus the amount parameter.
-                    //Then it needs to get the difference between the total amount and the amount
-                    if (request.Amount == 1)
-                        _itemPedidoRepository.IncreaseOne(item);
-                    else
-                        _itemPedidoRepository.IncreaseAmount(item, diferenceAmount);
 
+                    item.Quantidade = request.Amount;
+                    _itemPedidoRepository.UpdateEntity(item);
                 }
                 else
                     item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, request.Amount, product.Preco)).Instance;
 
                 return new
-                    AddProductToCartResponse(
+                    UpdateProductAmountResponse(
                         true,
-                        "Item added to Cart successfully!",
+                        "Cart item update successfully!",
                         pedido,
                         new List<ItemPedido> { item }
                     );
@@ -106,7 +125,7 @@ namespace CasaDoCodigo.Services
             catch(Exception e)
             {
                 return new
-                    AddProductToCartResponse(
+                    UpdateProductAmountResponse(
                         false,
                         $"ERROR: Failed while trying to insert a new item to the cart" +
                             $"EXECEPTION TYPE: {e.GetType()}" +

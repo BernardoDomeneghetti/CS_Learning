@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models.Requests
 {
-    public class AddProductToCartRequest
+    public class UpdateProductAmountRequest
     {
         public int PedidoId { get; set; }
         public int ProductCode { get; set; }

@@ -62,7 +62,7 @@
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: 'Pedido/AddProductToCart',
+                url: 'Pedido/UpdateProductAmount',
                 async: false,
                 data: {
                     request: {
@@ -71,7 +71,6 @@
                     }
                 }
             });
-
             window.location.href = '@Url.Action("Cart","Pedido")'
         }
 

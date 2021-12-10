@@ -25,19 +25,28 @@ namespace CasaDoCodigo.Controllers
         }
 
         [HttpPost]
-        public JsonResult AddProductToCart(AddProductToCartRequest request)
+        public JsonResult UpdateProductAmount(UpdateProductAmountRequest request)
         {
             request.PedidoId = _pedidoService.GetIdPedidoFromSession();
-            var response = _pedidoService.AddProductToPedido(request);
+            var response = _pedidoService.UpdateProductAmount(request);
             
             return Json(response);
         }
-        
+
         [HttpPost]
-        public JsonResult RemoveProductToCart(AddProductToCartRequest request)
+        public JsonResult IncreaseProductAmount(UpdateProductAmountRequest request)
         {
             request.PedidoId = _pedidoService.GetIdPedidoFromSession();
-            var response = _pedidoService.RemoveProductFromCart(request);
+            var response = _pedidoService.IncreaseProductAmount(request);
+
+            return Json(response);
+        }
+
+        [HttpPost]
+        public JsonResult DecreaseProductAmount(UpdateProductAmountRequest request)
+        {
+            request.PedidoId = _pedidoService.GetIdPedidoFromSession();
+            var response = _pedidoService.DecreaseProductAmount(request);
 
             return Json(response);
         }
