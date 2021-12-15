@@ -39,7 +39,7 @@ namespace CasaDoCodigo.Controllers
             request.PedidoId = _pedidoService.GetIdPedidoFromSession();
             var response = _pedidoService.IncreaseProductAmount(request);
 
-            return Json(response);
+            return Json( new { success = true });
         }
 
         [HttpPost]
@@ -48,7 +48,7 @@ namespace CasaDoCodigo.Controllers
             request.PedidoId = _pedidoService.GetIdPedidoFromSession();
             var response = _pedidoService.DecreaseProductAmount(request);
 
-            return Json(response);
+            return Json(new { success = true});
         }
 
         public IActionResult Resumo()

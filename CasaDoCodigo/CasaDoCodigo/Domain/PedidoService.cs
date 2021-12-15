@@ -81,7 +81,7 @@ namespace CasaDoCodigo.Services
             var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
             var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
 
-            request.Amount = item.Quantidade--;
+            request.Amount = ++item.Quantidade;
 
             return UpdateProductAmount(request);
 
@@ -91,7 +91,7 @@ namespace CasaDoCodigo.Services
             var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
             var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
 
-            request.Amount = item.Quantidade--;
+            request.Amount = --item.Quantidade;
 
             return UpdateProductAmount(request);
         }
