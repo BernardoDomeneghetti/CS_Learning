@@ -37,11 +37,11 @@
                     <div class="col-md-2 text-center">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button class="btn btn-default">
+                                <button onclick="RemoveProductToCart(@item.Produto.Codigo)" class="btn btn-default">
                                     <span class="glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input type="text" value="@(item.Quantidade)"
+                            <input id="@(item.Produto.Codigo)_qtde" type="text" value="@(item.Quantidade)"
                                    class="form-control text-center" />
                             <span class="input-group-btn">    
                                 <button onclick="AddProductToCart(@item.Produto.Codigo)" class="btn btn-default" >
@@ -68,7 +68,7 @@
             </div>
             <div class="col-md-2">
                 Total: R$ <span class="pull-right" total>
-                    419,40
+                    @(Model.Itens.Sum(p => p.PrecoUnitario * p.Quantidade))
                 </span>
             </div>
         </div>
@@ -81,8 +81,8 @@
             <a class="btn btn-success" asp-controller="Product" asp-action="Carrossel">
                 Adicionar Produtos
             </a>
-            <a class="btn btn-success" asp-action="Resumo">
-                Finalizar pedido
+            <a class="btn btn-success" asp-action="Cadastro">
+                Preencher cadastro
             </a>
         </div>
     </div>
@@ -90,19 +90,55 @@
 
 @section Scripts{ 
     <script>
-        function AddProductToCart(productCode) {
-            console.log(productCode);
+        function GetProductAmountField(productCode) {
+            var amountProductInputId = productCode + '_qtde';
+            console.log('captura do campo');
+            console.log($(amountProductInputId).val());
+            return $(amountProductInputId);
+        }
+
+        function SetProductAmountField(productCode, amount ) {
+            GetProductAmountField(productCode).val(amount);
+        }
+
+        function UpdateCartProductAmount(productCode, amount) {
+
             $.ajax({
-                url: '/Pedido/AddProductToCart',
                 type: 'POST',
                 dataType: 'json',
+                url: '/Pedido/UpdateProductAmount',
                 async: false,
                 data: {
                     request: {
-                        productCode: productCode
+                        productCode: productCode,
+                        amount: amount
+                    }
+                },
+                success: {
+                    function() {
+                        console.log('Deu certo');
+                    }
+                },
+                error: {
+                    fucntion() {
+                        console.log('Deu errado');
                     }
                 }
             });
+
+            SetProductAmountField(productCode, amount);
         }
+
+        function AddProductToCart(productCode) {
+            var currentAmount = GetProductAmountField(productCode).val();
+            UpdateCartProductAmount(productCode, ++currentAmount);
+        }
+
+        function RemoveProductFromCart(productCode) {
+            var currentAmount = GetProductAmountField(productCode).val();
+            UpdateCartProductAmount(productCode, --currentAmount);
+        }
+
+        
     </script>
 }

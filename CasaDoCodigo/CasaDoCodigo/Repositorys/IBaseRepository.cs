@@ -17,6 +17,6 @@ namespace CasaDoCodigo.Repositorys
 
         RepositoryGetInstanceByID<T> GetInstanceById(int instanceId);
 
-
+        RepositoryUpdateInstance<T> UpdateInstance(T instance);
     }
 }

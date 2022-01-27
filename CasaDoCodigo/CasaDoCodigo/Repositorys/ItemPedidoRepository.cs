@@ -38,26 +38,6 @@ namespace CasaDoCodigo.Repositorys
             }
         }
 
-        public IncreaseAmountItemResponse IncreaseAmount(ItemPedido item)
-        {
-
-            item.Quantidade++;
-            try
-            {
-                ItemPedido instance = _dbContext.Set<ItemPedido>().Update(item).Entity;
-                return new IncreaseAmountItemResponse(true, "Item found successfully", instance);
-            }
-            catch (Exception e)
-            {
-                return new
-                    IncreaseAmountItemResponse(
-                        false,
-                        $"ERROR: Failed while trying to search for ItemPedido" +
-                            $"EXCEPTION TYPE: {e.GetType()}" +
-                            $"EXCEPTION MESSAGE: {e.Message}",
-                        null
-                    );
-            }
-        }
+       
     }
 }

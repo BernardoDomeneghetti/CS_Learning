@@ -39,7 +39,6 @@ namespace CasaDoCodigo.Repositorys
                 return new RepositoryImportResponse<T>(false, $"ERROR: Items importing failed: {e.Message}", null);
             }
         }
-
         public RepositoryListResponse<T> ListDataFromEntity()
         {
             try
@@ -53,7 +52,6 @@ namespace CasaDoCodigo.Repositorys
                 return new RepositoryListResponse<T>(false, $"ERRO: Listagem de itens falhou: {e.Message}", null);
             }
         }
-
         public  RepositoryGetInstanceByID<T> GetInstanceById(int instanceId)
         {
             try
@@ -85,6 +83,26 @@ namespace CasaDoCodigo.Repositorys
                 return new RepositorySetInstance<T>(false, "Falha ao inserir a nova instância", null);
             }
 
+        }
+        public RepositoryUpdateInstance<T> UpdateInstance(T instance)
+        {
+            
+            try
+            {
+                T returnInstance = _dbContext.Set<T>().Update(instance).Entity;
+                return new RepositoryUpdateInstance<T>(true, "Item updated successfully", returnInstance);
+            }
+            catch (Exception e)
+            {
+                return new
+                    RepositoryUpdateInstance<T>(
+                        false,
+                        $"ERROR: Failed while trying to update instance {instance.GetType()}" +
+                            $"EXCEPTION TYPE: {e.GetType()}" +
+                            $"EXCEPTION MESSAGE: {e.Message}",
+                        null
+                    );
+            }
         }
     }
 }

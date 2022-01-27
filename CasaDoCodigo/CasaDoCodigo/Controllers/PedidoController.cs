@@ -25,10 +25,11 @@ namespace CasaDoCodigo.Controllers
         }
 
         [HttpPost]
-        public JsonResult AddProductToCart(AddProductToCartRequest request)
+        [Route("{Controller}/UpdateProductAmount")]
+        public JsonResult UpdateProductAmount(UpdateProductAmountRequest request)
         {
             var pedidoId = _pedidoService.GetIdPedidoFromSession();
-            var response = _pedidoService.AddProductToPedido(pedidoId, request.ProductCode);
+            var response = _pedidoService.UpdateProductAmount(pedidoId, request.ProductCode, request.Amount);
             
             return Json(response);
         }

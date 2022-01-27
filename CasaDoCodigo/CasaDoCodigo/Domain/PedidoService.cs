@@ -72,7 +72,7 @@ namespace CasaDoCodigo.Services
             }
         }
 
-        public AddProductToCartResponse AddProductToPedido(int pedidoId, int productCode)
+        public AddProductToCartResponse UpdateProductAmount(int pedidoId, int productCode, int amount)
         {
             try
             {
@@ -81,15 +81,17 @@ namespace CasaDoCodigo.Services
 
                 var pedido = _pedidoRepository.GetInstanceById(pedidoId).Instance;
 
-                if (item != null)
-                    _itemPedidoRepository.IncreaseAmount(item);
+                if (item != null) { 
+                    item.Quantidade = amount;
+                    item = _itemPedidoRepository.UpdateInstance(item).Instance;
+                }
                 else
                     item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, 1, product.Preco)).Instance;
 
                 return new
                     AddProductToCartResponse(
                         true,
-                        "Item added to Cart successfully!",
+                        "Item amount updated successfully!",
                         pedido,
                         new List<ItemPedido> { item }
                     );
@@ -99,7 +101,7 @@ namespace CasaDoCodigo.Services
                 return new
                     AddProductToCartResponse(
                         false,
-                        $"ERROR: Failed while trying to insert a new item to the cart" +
+                        $"ERROR: Failed while trying to update item amount in the cart" +
                             $"EXECEPTION TYPE: {e.GetType()}" +
                             $"EXCEPTION MESSAGE: {e.Message}",
                         null,

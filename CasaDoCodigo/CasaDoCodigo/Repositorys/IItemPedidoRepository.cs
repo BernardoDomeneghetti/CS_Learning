@@ -10,6 +10,5 @@ namespace CasaDoCodigo.Repositorys
     public interface IItemPedidoRepository: IBaseRepository<ItemPedido>
     {
         GetItemByPedidoAndProductResponse GetItemByPedidoAndProduct(int pedidoId, int productId);
-        IncreaseAmountItemResponse IncreaseAmount(ItemPedido item);
     }
 }
