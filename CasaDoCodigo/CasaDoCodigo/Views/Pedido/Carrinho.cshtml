@@ -37,7 +37,7 @@
                     <div class="col-md-2 text-center">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button onclick="RemoveProductToCart(@item.Produto.Codigo)" class="btn btn-default">
+                                <button onclick="RemoveProductFromCart(@item.Produto.Codigo)" class="btn btn-default">
                                     <span class="glyphicon-minus"></span>
                                 </button>
                             </span>
@@ -91,9 +91,7 @@
 @section Scripts{ 
     <script>
         function GetProductAmountField(productCode) {
-            var amountProductInputId = productCode + '_qtde';
-            console.log('captura do campo');
-            console.log($(amountProductInputId).val());
+            var amountProductInputId = '#' + productCode + '_qtde';
             return $(amountProductInputId);
         }
 
@@ -117,6 +115,7 @@
                 success: {
                     function() {
                         console.log('Deu certo');
+                        SetProductAmountField(productCode, amount);
                     }
                 },
                 error: {
@@ -125,8 +124,6 @@
                     }
                 }
             });
-
-            SetProductAmountField(productCode, amount);
         }
 
         function AddProductToCart(productCode) {
