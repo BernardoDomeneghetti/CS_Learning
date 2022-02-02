@@ -1,6 +1,6 @@
-﻿@model CasaDoCodigo.Models.Entities.Pedido
+﻿@model CasaDoCodigo.ViewModels.CartViewModel
 @{
-    ViewData["Model"] = "Carrinho";
+    ViewData["Title"] = "Cart";
 }
 <h3>Meu Carrinho</h3>
 
@@ -26,7 +26,7 @@
     </div>
     <div class="panel-body">
         @{
-            foreach (var item in Model.Itens)
+            foreach (var item in Model.Items)
             {
                 <div class="row row-center linha-produto">
                     <div class="col-md-3">
@@ -62,14 +62,14 @@
     <div class="panel-footer">
         <div class="row">
             <div class="col-md-10">
-                <span numero-itens>
-                    Total: @(Model.Itens.Count)
+                <span numero-Items>
+                    Total: @(Model.Items.Count)
                 </span>
             </div>
             <div class="col-md-2">
                 Total: R$ 
                 <span id="total" class="pull-right" total>
-                    @(Model.Itens.Sum(x => (x.PrecoUnitario * x.Quantidade)).ToString())
+                    @(Model.Items.Sum(x => (x.PrecoUnitario * x.Quantidade)).ToString())
                 </span>
             </div>
         </div>
