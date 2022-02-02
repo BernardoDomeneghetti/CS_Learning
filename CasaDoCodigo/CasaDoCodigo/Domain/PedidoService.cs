@@ -9,7 +9,6 @@ using CasaDoCodigo.Models.Responses;
 using CasaDoCodigo.Models.Entities;
 using CasaDoCodigo.Models.Exceptions;
 using Microsoft.AspNetCore.Http;
-using CasaDoCodigo.Models.Requests;
 
 namespace CasaDoCodigo.Services
 {
@@ -41,11 +40,8 @@ namespace CasaDoCodigo.Services
 
         public int GetIdPedidoFromSession()
         {
-            var teste = _accessor.HttpContext.Session.GetInt32("PedidoId");
-            if ( teste != null)
-                return teste.Value;
-            else
-                return RegisterPedidoInSession(GetNewPedidoInstance().Instance);
+            return _accessor.HttpContext.Session.GetInt32("PedidoId")??
+                        RegisterPedidoInSession(GetNewPedidoInstance().Instance);
         }
 
         public int RegisterPedidoInSession(Pedido pedido)
@@ -76,48 +72,26 @@ namespace CasaDoCodigo.Services
             }
         }
 
-        public UpdateProductAmountResponse IncreaseProductAmount(UpdateProductAmountRequest request)
-        {
-            var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
-            var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
-
-            request.Amount = ++item.Quantidade;
-
-            return UpdateProductAmount(request);
-
-        }
-        public UpdateProductAmountResponse DecreaseProductAmount(UpdateProductAmountRequest request)
-        {
-            var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
-            var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
-
-            request.Amount = --item.Quantidade;
-
-            return UpdateProductAmount(request);
-        }
-        
-
-        public UpdateProductAmountResponse UpdateProductAmount(UpdateProductAmountRequest request)
+        public AddProductToCartResponse UpdateProductAmount(int pedidoId, int productCode, int amount)
         {
             try
             {
-                var product = _productRepository.GetProductByCode(request.ProductCode).Instance;
-                var item = _itemPedidoRepository.GetItemByPedidoAndProduct(request.PedidoId, product.Id).Item;
-                var pedido = _pedidoRepository.GetInstanceById(request.PedidoId).Instance;
+                var product = _productRepository.GetProductByCode(productCode).Instance;
+                var item = _itemPedidoRepository.GetItemByPedidoAndProduct(pedidoId, product.Id).Item;
 
-                if (item != null)
-                {
+                var pedido = _pedidoRepository.GetInstanceById(pedidoId).Instance;
 
-                    item.Quantidade = request.Amount;
-                    _itemPedidoRepository.UpdateEntity(item);
+                if (item != null) { 
+                    item.Quantidade = amount;
+                    item = _itemPedidoRepository.UpdateInstance(item).Instance;
                 }
                 else
-                    item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, request.Amount, product.Preco)).Instance;
+                    item = _itemPedidoRepository.InsertNewInstance(new ItemPedido(pedido, product, 1, product.Preco)).Instance;
 
                 return new
-                    UpdateProductAmountResponse(
+                    AddProductToCartResponse(
                         true,
-                        "Cart item update successfully!",
+                        "Item amount updated successfully!",
                         pedido,
                         new List<ItemPedido> { item }
                     );
@@ -125,9 +99,9 @@ namespace CasaDoCodigo.Services
             catch(Exception e)
             {
                 return new
-                    UpdateProductAmountResponse(
+                    AddProductToCartResponse(
                         false,
-                        $"ERROR: Failed while trying to insert a new item to the cart" +
+                        $"ERROR: Failed while trying to update item amount in the cart" +
                             $"EXECEPTION TYPE: {e.GetType()}" +
                             $"EXCEPTION MESSAGE: {e.Message}",
                         null,

@@ -22,7 +22,7 @@ namespace CasaDoCodigo.Repositorys
                     _dbContext.Set<ItemPedido>()
                         .Where(p => p.Pedido.Id == pedidoId && p.Produto.Id == productCode)
                         .SingleOrDefault();
-
+                
                 return new GetItemByPedidoAndProductResponse(true, "Item found successfully", instance);
             }
             catch (Exception e)
@@ -37,33 +37,7 @@ namespace CasaDoCodigo.Repositorys
                     );
             }
         }
-        /// <summary>
-        /// Increment the item count with the amount parameter
-        /// </summary>
-        /// <param name="item"></param>
-        /// <param name="amount"> This parameter is added to the original item's amount, it doesn't replaces it</param>
-        /// <returns></returns>
-        public IncreaseAmountItemResponse UpdateAmount(ItemPedido item, int amount)
-        {
-            item.Quantidade += amount;
-            try
-            {
-                ItemPedido instance = _dbContext.Set<ItemPedido>().Update(item).Entity;
-                _dbContext.SaveChanges();
 
-                return new IncreaseAmountItemResponse(true, "Item found successfully", instance);
-            }
-            catch (Exception e)
-            {
-                return new
-                    IncreaseAmountItemResponse(
-                        false,
-                        $"ERROR: Failed while trying to search for ItemPedido" +
-                            $"EXCEPTION TYPE: {e.GetType()}" +
-                            $"EXCEPTION MESSAGE: {e.Message}",
-                        null
-                    );
-            }
-        }
+       
     }
 }

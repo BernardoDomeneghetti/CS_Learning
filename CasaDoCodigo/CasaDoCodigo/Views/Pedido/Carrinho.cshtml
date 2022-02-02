@@ -1,6 +1,6 @@
-﻿@model CasaDoCodigo.ViewModels.CartViewModel
+﻿@model CasaDoCodigo.Models.Entities.Pedido
 @{
-    ViewData["Title"] = "Cart";
+    ViewData["Model"] = "Carrinho";
 }
 <h3>Meu Carrinho</h3>
 
@@ -26,34 +26,34 @@
     </div>
     <div class="panel-body">
         @{
-            foreach (var item in Model.Items)
+            foreach (var item in Model.Itens)
             {
                 <div class="row row-center linha-produto">
                     <div class="col-md-3">
                         <img class="img-produto-carrinho" src="/images/produtos/large_@(item.Produto.Codigo.ToString("D3")).jpg" />
                     </div>
                     <div class="col-md-3">@(item.Produto.Nome)</div>
-                    <div id="preco_@item.Produto.Codigo" class="col-md-2 text-center">R$ @(item.Produto.Preco)</div>
+                    <div class="col-md-2 text-center">R$ @(item.Produto.Preco)</div>
                     <div class="col-md-2 text-center">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button onclick="carrinho.DecrementAmount(@item.Produto.Codigo)" class="btn btn-default">
+                                <button onclick="RemoveProductFromCart(@item.Produto.Codigo)" class="btn btn-default">
                                     <span class="glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input id="amount_@item.Produto.Codigo" type="text" onchange="carrinho.SetAmount(@(item.Produto.Codigo), this)"  value="@(item.Quantidade)"
+                            <input id="@(item.Produto.Codigo)_qtde" type="text" value="@(item.Quantidade)"
                                    class="form-control text-center" />
                             <span class="input-group-btn">    
-                                <button onclick="carrinho.IncrementAmount(@item.Produto.Codigo)" class="btn btn-default" >
+                                <button onclick="AddProductToCart(@item.Produto.Codigo)" class="btn btn-default" >
                                     <span class="glyphicon-plus"></span>
                                 </button>
                             </span>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        R$ <span id="subtotal_@(item.Produto.Codigo)" class="pull-right subtotal" subtotal>
+                        R$ <span class="pull-right" subtotal>
                             @(item.Produto.Preco * item.Quantidade)
-                        </span>
+                        </span> 
                     </div>
                 </div>
             }
@@ -62,14 +62,13 @@
     <div class="panel-footer">
         <div class="row">
             <div class="col-md-10">
-                <span numero-Items>
-                    Total: @(Model.Items.Count)
+                <span numero-itens>
+                    Total: @(Model.Itens.Count)
                 </span>
             </div>
             <div class="col-md-2">
-                Total: R$ 
-                <span id="total" class="pull-right" total>
-                    @(Model.Items.Sum(x => (x.PrecoUnitario * x.Quantidade)).ToString())
+                Total: R$ <span class="pull-right" total>
+                    @(Model.Itens.Sum(p => p.PrecoUnitario * p.Quantidade))
                 </span>
             </div>
         </div>
@@ -89,6 +88,54 @@
     </div>
 </div>
 
-@section ImportScripts{ 
-    <script src="~/js/CarrinhoScript.js"></script>
+@section Scripts{ 
+    <script>
+        function GetProductAmountField(productCode) {
+            var amountProductInputId = '#' + productCode + '_qtde';
+            return $(amountProductInputId);
+        }
+
+        function SetProductAmountField(productCode, amount ) {
+            GetProductAmountField(productCode).val(amount);
+        }
+
+        function UpdateCartProductAmount(productCode, amount) {
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: '/Pedido/UpdateProductAmount',
+                async: false,
+                data: {
+                    request: {
+                        productCode: productCode,
+                        amount: amount
+                    }
+                },
+                success: {
+                    function() {
+                        console.log('Deu certo');
+                        SetProductAmountField(productCode, amount);
+                    }
+                },
+                error: {
+                    fucntion() {
+                        console.log('Deu errado');
+                    }
+                }
+            });
+        }
+
+        function AddProductToCart(productCode) {
+            var currentAmount = GetProductAmountField(productCode).val();
+            UpdateCartProductAmount(productCode, ++currentAmount);
+        }
+
+        function RemoveProductFromCart(productCode) {
+            var currentAmount = GetProductAmountField(productCode).val();
+            UpdateCartProductAmount(productCode, --currentAmount);
+        }
+
+        
+    </script>
 }

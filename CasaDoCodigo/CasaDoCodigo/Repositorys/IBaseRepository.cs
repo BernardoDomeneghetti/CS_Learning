@@ -10,9 +10,13 @@ namespace CasaDoCodigo.Repositorys
     public interface IBaseRepository<T> where T: BaseModel
     {
         RepositoryImportResponse<T> ImportDataFromList(List<T> items);
+
         RepositoryListResponse<T> ListDataFromEntity();
-        RepositorySetInstance<T> InsertNewInstance(T entity);
+
+        RepositorySetInstance<T> InsertNewInstance(T instance);
+
         RepositoryGetInstanceByID<T> GetInstanceById(int instanceId);
-        RepositoryUpdateResponse<T> UpdateEntity(T entity);
+
+        RepositoryUpdateInstance<T> UpdateInstance(T instance);
     }
 }
